@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <title>Block vs Inline</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        border: 2px solid brown;
+        padding: 40px;
+        margin: 40px;
+        background-color: cadetblue;
+      }
+      .image {
+        height: 400px;
+        width: 400px;
+      }
+      .inlineBox {
+        display: inline-block;
+        height: 40px;
+        width: 100px;
+      }
+      .btn{
+        border: 1px solid white;
+        background-color: lightseagreen;
+        padding: 20px;
+        border-radius: 40px;
+        color: white;
+        cursor: pointer;
+        width: 200px;
+      }
+      .right-icon{
+        margin-left: 4px;
+      }
+
+      .btn:hover{
+        background-color: darkgreen;
+      }
+      a:visited{
+        color: pink;
+      }
+      a:hover{
+        color: silver;
+      }
+      a:active{
+        color: aqua;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div class="container">Box 1</div>
+    <div class="container">Box 2</div>
+    <div class="container">Box 3</div>
+    <div class="container">Box 4</div>
+    <div class="container">Box 5
+
+        <button class="btn">
+            Continue <i class="fa-solid fa-arrow-right right-icon"></i> </span>
+        </button>
+    </div>
+
+    <span> First Name </span>
+    
+
+    <span class="inlineBox"> Last Name </span>
+
+    <a href="#">I am a Link</a>
+
+    <img src="./images/photo.jpeg" class="image" alt="person-stading" />
+  </body>
+</html>
