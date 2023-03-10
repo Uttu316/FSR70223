@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dogs Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Tilt+Neon&family=Tilt+Prism&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Tilt Neon", cursive;
+      }
+      .header {
+        background-color: #ffc12d;
+        padding: 20px;
+        color: white;
+        font-size: 24px;
+      }
+      .logo {
+        display: inline-block;
+        margin-right: 8px;
+      }
+      .nav {
+        display: inline-block;
+        float: right;
+        margin-top: 10px;
+      }
+      .nav-item {
+        padding: 2px;
+        color: whitesmoke;
+        text-decoration: none;
+        margin-left: 8px;
+      }
+      .nav-item:hover {
+        color: white;
+        border-bottom: 2px solid white;
+      }
+      .hero-banner-img {
+        height: 100%;
+        width: 100%;
+      }
+      .section {
+        padding: 20px;
+        margin-bottom: 40px;
+      }
+      .footer {
+        background-color: black;
+        color: white;
+        padding: 40px;
+        text-align: center;
+        font-size: 20px;
+      }
+      .categories {
+        text-align: center;
+      }
+      .sub-heading {
+        font-size: 40px;
+        margin-bottom: 10px;
+        color: brown;
+      }
+      .sub-desc {
+        font-size: 20px;
+        color: gray;
+        margin-bottom: 10px;
+      }
+      .category {
+        margin: 40px;
+        display: inline-block;
+      }
+      .category-photo {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+      }
+      .category-label {
+        font-size: 26px;
+        margin-top: 10px;
+      }
+      .dog-label {
+        color: brown;
+      }
+      .cat-label {
+        color: #ffc12d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="logo">Dog's Care</h1>
+      <div class="nav">
+        <a class="nav-item" href="#menu">Menu</a>
+        <a class="nav-item" href="#team">Team</a>
+        <a class="nav-item" href="#contact"> Contact</a>
+      </div>
+    </div>
+    <div class="hero-banner">
+      <img class="hero-banner-img" alt="banner" src="./assets/banner.jpeg" />
+    </div>
+    <div class="section" id="menu">
+      <div class="categories">
+        <h2 class="sub-heading">Choose your loved ones</h2>
+        <p class="sub-desc">Would like to choose dogs or cats?</p>
+
+        <a href="#dogs">
+          <div class="category">
+            <img class="category-photo" alt="dog" src="./assets/dog.jpeg" />
+            <p class="category-label dog-label">Dogs</p>
+          </div>
+        </a>
+        <a href="#cats">
+          <div class="category">
+            <img class="category-photo"  alt="cat"  src="./assets/cat.jpeg" />
+            <p class="category-label cat-label">Cats</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="section" id="dogs"></div>
+    <div class="section" id="cats"></div>
+    <div class="section" id="team"></div>
+    <div class="section" id="contact"></div>
+    <div class="footer">
+      Created by FSR70223 batch with ❤️ | Copyright · 2023
+    </div>
+  </body>
+</html>
