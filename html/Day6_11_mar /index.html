@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paw's Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Tilt+Neon&family=Tilt+Prism&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="description"
+      content="Paw's care is a paw care brand. We take care of your dogs and cats with lot of love. Our services are loved by millions of Paw's owners. Why don't you try it once?"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Tilt Neon", cursive;
+      }
+      .header {
+        background-color: #ffc12d;
+        padding: 20px;
+        color: white;
+        font-size: 24px;
+      }
+      .logo {
+        display: inline-block;
+        margin-right: 8px;
+      }
+      .nav {
+        display: inline-block;
+        float: right;
+        margin-top: 15px;
+      }
+      .nav-item {
+        padding: 2px;
+        color: whitesmoke;
+        text-decoration: none;
+        margin-left: 8px;
+      }
+      .nav-item:hover {
+        color: white;
+        border-bottom: 2px solid white;
+      }
+      .hero-banner-img {
+        height: 100%;
+        width: 100%;
+      }
+      .section {
+        padding: 20px;
+        margin: 40px 0px;
+      }
+      .footer {
+        background-color: black;
+        color: white;
+        padding: 40px;
+        text-align: center;
+        font-size: 20px;
+      }
+      .categories {
+        text-align: center;
+      }
+      .sub-heading {
+        font-size: 40px;
+        margin-bottom: 10px;
+        color: brown;
+      }
+      .sub-desc {
+        font-size: 20px;
+        color: gray;
+        margin-bottom: 10px;
+      }
+      .category {
+        margin: 40px;
+        display: inline-block;
+      }
+      .category-photo {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+      }
+      .category-label {
+        font-size: 26px;
+        margin-top: 10px;
+      }
+      .dog-label {
+        color: brown;
+      }
+      .cat-label {
+        color: #ffc12d;
+      }
+      .section-title {
+        font-size: 42px;
+        text-align: center;
+        text-decoration: underline;
+      }
+      #dogs .section-title {
+        color: brown;
+      }
+      #cats .section-title {
+        color: #ffc12d;
+      }
+      .cards-container {
+        margin: 20px auto;
+        max-width: 1250px;
+      }
+      .card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 20px;
+        box-shadow: 4px 4px 4px #ccc;
+        display: inline-block;
+      }
+      .card-img {
+        height: 300px;
+        width: 350px;
+        border-radius: 8px;
+        background-color: lightgray;
+      }
+      .card-img img {
+        height: 300px;
+        width: 100%;
+      }
+      .card-title {
+        font-size: 28px;
+        font-family: "Roboto Mono", monospace;
+      }
+      .card-list {
+        margin-top: 10px;
+        list-style-type: none;
+      }
+      div span {
+        color: red;
+      }
+      .card-list li {
+        margin-bottom: 4px;
+        color: gray;
+        font-family: "Roboto Mono", monospace;
+      }
+      .card-list li b {
+        font-family: "Roboto Mono", monospace;
+      }
+      .wave img {
+        width: 100%;
+        height: 250px;
+      }
+      .card-actions {
+        margin-top: 10px;
+      }
+      .card-actions a {
+        float: right;
+        padding: 8px;
+        border-radius: 4px;
+        color: white;
+        background-color: salmon;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+      }
+      .card-actions a:hover {
+        background-color: #00be00;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo">Dog's Care</h1>
+      <nav class="nav">
+        <a class="nav-item" href="#menu">Menu</a>
+        <a class="nav-item" href="#team">Team</a>
+        <a class="nav-item" href="#contact"> Contact</a>
+      </nav>
+    </header>
+    <div class="hero-banner">
+      <img class="hero-banner-img" alt="banner" src="./assets/banner.jpeg" />
+    </div>
+    <main>
+      <section class="section" id="menu">
+        <div class="categories">
+          <h2 class="sub-heading">Choose your loved ones</h2>
+          <p class="sub-desc">Would like to choose dogs or cats?</p>
+
+          <a href="#dogs">
+            <article class="category">
+              <img class="category-photo" alt="dog" src="./assets/dog.jpeg" />
+              <p class="category-label dog-label">Dogs</p>
+            </article>
+          </a>
+          <a href="#cats">
+            <article class="category">
+              <img class="category-photo" alt="cat" src="./assets/cat.jpeg" />
+              <p class="category-label cat-label">Cats</p>
+            </article>
+          </a>
+        </div>
+      </section>
+      <div class="wave">
+        <img src="./assets/waves.svg" />
+      </div>
+      <section class="section" id="dogs">
+        <h3 class="section-title">Dogs 🐕</h3>
+        <div class="cards-container">
+          <article class="card">
+            <div class="card-img">
+              <img src="https://placedog.net/500?id=1" alt="dog-photo" />
+            </div>
+            <p class="card-title">Rocky</p>
+            <ul class="card-list">
+              <li><b>Age:</b> 2yrs</li>
+              <li><b>Color:</b> Brown</li>
+              <li><b>Breed:</b> German Shepherd</li>
+              <li><b>Vaccinated:</b> Yes ✅</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#">Get it Home</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img
+                src="https://placedog.net/500?id=2"
+                class="card-img"
+                alt="dog-photo"
+              />
+            </div>
+            <p class="card-title">Rocky</p>
+            <ul class="card-list">
+              <li><b>Age:</b> 2yrs</li>
+              <li><b>Color:</b> Brown</li>
+              <li><b>Breed:</b> German Shepherd</li>
+              <li><b>Vaccinated:</b> Yes ✅</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#">Get it Home</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img
+                src="https://placedog.net/500?id=3"
+                class="card-img"
+                alt="dog-photo"
+              />
+            </div>
+            <p class="card-title">Rocky</p>
+            <ul class="card-list">
+              <li><b>Age:</b> 2yrs</li>
+              <li><b>Color:</b> Brown</li>
+              <li><b>Breed:</b> German Shepherd</li>
+              <li><b>Vaccinated:</b> Yes ✅</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#">Get it Home</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img
+                src="https://placedog.net/500?id=4"
+                class="card-img"
+                alt="dog-photo"
+              />
+            </div>
+            <p class="card-title">Rocky</p>
+            <ul class="card-list">
+              <li><b>Age:</b> 2yrs</li>
+              <li><b>Color:</b> Brown</li>
+              <li><b>Breed:</b> German Shepherd</li>
+              <li><b>Vaccinated:</b> Yes ✅</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#">Get it Home</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img
+                src="https://placedog.net/500?id=5"
+                class="card-img"
+                alt="dog-photo"
+              />
+            </div>
+            <p class="card-title">Rocky</p>
+            <ul class="card-list">
+              <li><b>Age:</b> 2yrs</li>
+              <li><b>Color:</b> Brown</li>
+              <li><b>Breed:</b> German Shepherd</li>
+              <li><b>Vaccinated:</b> Yes ✅</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#">Get it Home</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img
+                src="https://placedog.net/500?id=6"
+                class="card-img"
+                alt="dog-photo"
+              />
+            </div>
+            <p class="card-title">Rocky</p>
+            <ul class="card-list">
+              <li><b>Age:</b> 2yrs</li>
+              <li><b>Color:</b> Brown</li>
+              <li><b>Breed:</b> German Shepherd</li>
+              <li><b>Vaccinated:</b> Yes ✅</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#">Get it Home</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section" id="cats">
+        <h3 class="section-title">Cats 🐈</h3>
+        <div class="cards-container">
+          <article class="card">
+            <div class="card-img">
+              <img
+                src="https://placekitten.com/500/500?image=1"
+                class="card-img"
+                alt="dog-photo"
+              />
+            </div>
+            <p class="card-title">Rocky</p>
+            <ul class="card-list">
+              <li><b>Age:</b> 2yrs</li>
+              <li><b>Color:</b> Brown</li>
+              <li><b>Breed:</b> German Shepherd</li>
+              <li><b>Vaccinated:</b> Yes ✅</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#">Get it Home</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img
+                src="https://placekitten.com/500/500?image=2"
+                class="card-img"
+                alt="dog-photo"
+              />
+            </div>
+            <p class="card-title">Rocky</p>
+            <ul class="card-list">
+              <li><b>Age:</b> 2yrs</li>
+              <li><b>Color:</b> Brown</li>
+              <li><b>Breed:</b> German Shepherd</li>
+              <li><b>Vaccinated:</b> Yes ✅</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#">Get it Home</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img
+                src="https://placekitten.com/500/500?image=3"
+                class="card-img"
+                alt="dog-photo"
+              />
+            </div>
+            <p class="card-title">Rocky</p>
+            <ul class="card-list">
+              <li><b>Age:</b> 2yrs</li>
+              <li><b>Color:</b> Brown</li>
+              <li><b>Breed:</b> German Shepherd</li>
+              <li><b>Vaccinated:</b> Yes ✅</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#">Get it Home</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img
+                src="https://placekitten.com/500/500?image=4"
+                class="card-img"
+                alt="dog-photo"
+              />
+            </div>
+            <p class="card-title">Rocky</p>
+            <ul class="card-list">
+              <li><b>Age:</b> 2yrs</li>
+              <li><b>Color:</b> Brown</li>
+              <li><b>Breed:</b> German Shepherd</li>
+              <li><b>Vaccinated:</b> Yes ✅</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#">Get it Home</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img
+                src="https://placekitten.com/500/500?image=5"
+                class="card-img"
+                alt="dog-photo"
+              />
+            </div>
+            <p class="card-title">Rocky</p>
+            <ul class="card-list">
+              <li><b>Age:</b> 2yrs</li>
+              <li><b>Color:</b> Brown</li>
+              <li><b>Breed:</b> German Shepherd</li>
+              <li><b>Vaccinated:</b> Yes ✅</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#">Get it Home</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img
+                src="https://placekitten.com/500/500?image=6"
+                class="card-img"
+                alt="dog-photo"
+              />
+            </div>
+            <p class="card-title">Rocky</p>
+            <ul class="card-list">
+              <li><b>Age:</b> 2yrs</li>
+              <li><b>Color:</b> Brown</li>
+              <li><b>Breed:</b> German Shepherd</li>
+              <li><b>Vaccinated:</b> Yes ✅</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#">Get it Home</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section" id="team"></section>
+      <section class="section" id="contact"></section>
+    </main>
+    <footer class="footer">
+      Created by FSR70223 batch with ❤️ | Copyright · 2023
+    </footer>
+  </body>
+</html>
