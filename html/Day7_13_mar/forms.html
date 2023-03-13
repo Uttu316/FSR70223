@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <h1>Welcome to Forms</h1>
+    <form>
+      <fieldset>
+        <legend align="center">Student Details</legend>
+        <div>
+          <label for="name"> Name: </label>
+          <input
+            name="name"
+            required
+            autofocus
+            maxlength="3"
+            placeholder="Enter name here"
+            id="name"
+            type="text"
+          />
+        </div>
+        <div>
+          <label for="email"> Email: </label>
+          <input
+            name="email"
+            required
+            placeholder="Enter email here"
+            id="email"
+            type="email"
+          />
+        </div>
+        <div>
+          <label for="phone"> Phone: </label>
+          <input name="phone" required id="phone" type="tel" />
+        </div>
+        <div>
+          <label for="age"> Age: </label>
+          <input name="age" id="age" min="10" max="20" type="number" />
+        </div>
+        <div>
+          <label for="eligiblity"> Are you 18+: </label>
+          <input name="eligiblity" id="eligiblity" type="checkbox" />
+        </div>
+        <div>
+          <p>Gender:</p>
+          <label for="male"> Male </label>
+          <input value="male" id="male" name="gender" type="radio" />
+          <label for="female"> Female </label>
+          <input value="female" id="female" name="gender" type="radio" />
+          <label for="others"> Others </label>
+          <input value="others" id="others" name="gender" type="radio" />
+        </div>
+
+        <div>
+          Answer the following questions:
+          <ol>
+            <li>
+              <p>What is your favourite color?</p>
+              <label for="red"> Red </label>
+              <input id="red" value="red" type="radio" name="color" />
+              <label for="green"> Green </label>
+              <input id="green" value="green" type="radio" name="color" />
+              <label for="blue"> Blue </label>
+              <input id="blue" value="blue" type="radio" name="color" />
+            </li>
+            <li>
+              <p>What is your favourite sport?</p>
+              <label for="cricket"> Cricket </label>
+              <input id="cricket" type="radio" name="sport" />
+              <label for="footbal"> Footbal </label>
+              <input id="footbal" type="radio" name="sport" />
+              <label for="badminton"> Badminton </label>
+              <input id="badminton" type="radio" name="sport" />
+            </li>
+          </ol>
+        </div>
+        <div>
+          <label for="password"> Password </label>
+          <input
+            type="password"
+            required
+            maxlength="8"
+            name="pass"
+            id="password"
+          />
+        </div>
+        <div>
+          <label for="religion">Select Religion</label>
+          <select name="religion" id="religion">
+            <option value="hindu">Hindu</option>
+            <option value="muslim">Muslim</option>
+            <option value="sikh">Sikh</option>
+            <option value="christian">Christian</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="car">Select Car</label>
+          <select name="car" id="car">
+            <optgroup label="Toyota">
+              <option value="i-10">I10</option>
+              <option value="fortuner">Fortuner</option>
+            </optgroup>
+            <optgroup label="Mahindra">
+              <option value="thar">Thar</option>
+              <option value="scorpio">Scorpio</option>
+            </optgroup>
+          </select>
+        </div>
+        <div>
+          <label for="search-student">Search Students:</label>
+          <input id="search-student" list="students" />
+          <datalist id="students">
+            <option>Aslam</option>
+            <option>Akram</option>
+            <option>Muneera</option>
+            <option>Esha</option>
+            <option>Prince</option>
+            <option>Raja</option>
+            <option>Nagma</option>
+          </datalist>
+        </div>
+        <div>
+          <input type="button" value="Click me" />
+          <input type="date" />
+          <input type="color" />
+          <input type="file" />
+          <input type="range" min="0" max="100" step="1" />
+        </div>
+      </fieldset>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
