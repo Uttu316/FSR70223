@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
     <title>Paw's Care</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,9 +28,9 @@
         margin: 0;
         padding: 0;
         font-family: "Tilt Neon", cursive;
-        box-sizing:border-box;
+        box-sizing: border-box;
       }
-      html{
+      html {
         scroll-behavior: smooth;
       }
       .header {
@@ -174,49 +174,50 @@
       .card-actions a:hover {
         background-color: #00be00;
       }
-      #contact{
+      #contact {
         background-color: #ffc12d;
         margin-bottom: 0px;
       }
-    #contact .section-title{
-      color: whitesmoke;
-     
-    }
-      .contact-form{
+      #contact .section-title {
+        color: whitesmoke;
+      }
+      .contact-form {
         width: 50%;
         max-width: 500px;
         min-width: 320px;
         margin: 40px auto;
       }
-      .form-item{
+      .form-item {
         margin: 20px 0px;
         font-family: Arial, Helvetica, sans-serif;
       }
-      .form-label{
+      .form-label {
         font-size: 26px;
         color: white;
       }
-      .form-label sup{
+      .form-label sup {
         color: orangered;
         font-size: 12px;
         margin-left: 4px;
       }
-      .form-input input,.form-input textarea{
+      .form-input input,
+      .form-input textarea {
         border: 1px solid lightgray;
         padding: 16px;
         width: 100%;
         margin-top: 8px;
         border-radius: 8px;
       }
-      .form-input input:focus,.form-input textarea:focus{
+      .form-input input:focus,
+      .form-input textarea:focus {
         outline: 1px solid brown;
       }
 
-      .form-cta{
+      .form-cta {
         margin-top: 30px;
         width: 100%;
       }
-      .form-cta button{
+      .form-cta button {
         margin: 0 auto;
         width: 80%;
         display: block;
@@ -229,32 +230,31 @@
         cursor: pointer;
         box-shadow: 0px 4px 4px #ccc;
       }
-      .form-cta button i{
+      .form-cta button i {
         margin-left: 4px;
         font-weight: 600;
       }
 
-      #team .section-title{
+      #team .section-title {
         color: brown;
       }
-      .team-table{
+      .team-table {
         max-width: 80%;
         margin: 40px auto;
         border-spacing: 10px 20px;
       }
-      .team-row{
-
+      .team-row {
       }
-      .team-cell{
+      .team-cell {
         padding: 10px;
         margin: 10px;
       }
-      .team-cell img{
+      .team-cell img {
         height: 200px;
         width: 200px;
         border-radius: 12px;
       }
-      .team-cell p{
+      .team-cell p {
         border: 2px solid brown;
         padding: 8px;
         text-align: center;
@@ -262,16 +262,67 @@
         border-radius: 10px;
         cursor: pointer;
       }
-      .team-cell p:hover{
+      .team-cell p:hover {
         background-color: brown;
         color: #ffc12d;
       }
-
+      #donate {
+        background-color: salmon;
+        padding: 40px;
+        border-radius: 20px;
+        max-width: 80%;
+        margin: 60px auto;
+      }
+      #donate .section-title {
+        text-decoration: none;
+        color: white;
+        font-size: 26px;
+        display: inline-block;
+        text-align: left;
+        width: 65%;
+        float: left;
+        margin-top: 10px;
+      }
+      .donate-btn {
+        display: inline-block;
+        width: 30%;
+      }
+      .donate-btn button {
+        border: none;
+        border-radius: 8px;
+        float: right;
+        cursor: pointer;
+      }
+      .donate-btn span {
+        display: block;
+        font-size: 16px;
+      }
+      .donate-btn-label {
+        background-color: #00be00;
+        padding: 15px 12px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        color: white;
+        font-weight: 600;
+      }
+      .donate-icon {
+        background-color: white;
+        padding: 20px 12px;
+        padding-bottom: 10px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        color: #00be00;
+      }
+      .special-green {
+        color: #ffc12d;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+      }
     </style>
   </head>
   <body>
     <header class="header">
-      <h1 class="logo">Dog's Care</h1>
+      <h1 class="logo">Paw's Care</h1>
       <nav class="nav">
         <a class="nav-item" href="#menu">Menu</a>
         <a class="nav-item" href="#team">Team</a>
@@ -538,71 +589,95 @@
           </article>
         </div>
       </section>
+      <section class="section" id="donate">
+        <h3 class="section-title">
+          We know you love paws, so do we. Please
+          <b class="special-green">Donate</b> and help other paws to live better  💛
+        </h3>
+        <div class="donate-btn">
+          <button>
+            <span class="donate-icon">
+              <i class="fa-solid fa-hand-holding-medical"></i>
+            </span>
+            <span class="donate-btn-label"> Donate </span>
+          </button>
+        </div>
+      </section>
       <section class="section" id="team">
-        <h3 class="section-title">Team 🧑‍💻👩‍💻</h3>
+        <h3 class="section-title">Meet Our Team 🧑‍💻👩‍💻</h3>
         <table class="team-table">
           <tr class="team-row">
             <td class="team-cell">
-              <img src="https://xsgames.co/randomusers/assets/avatars/male/1.jpg" alt="user-photo"/>
-              <p title="Visva Nathan | Front-End Developer">
-                Visva
-              </p>
+              <img
+                src="https://xsgames.co/randomusers/assets/avatars/male/1.jpg"
+                alt="user-photo"
+              />
+              <p title="Visva Nathan | Front-End Developer">Visva</p>
             </td>
             <td class="team-cell">
-              <img src="https://xsgames.co/randomusers/assets/avatars/female/1.jpg" alt="user-photo"/>
-              <p title="Esha Kar">
-                Esha
-              </p>
+              <img
+                src="https://xsgames.co/randomusers/assets/avatars/female/1.jpg"
+                alt="user-photo"
+              />
+              <p title="Esha Kar | Front-End Developer">Esha</p>
             </td>
             <td class="team-cell">
-              <img src="https://xsgames.co/randomusers/assets/avatars/male/2.jpg" alt="user-photo"/>
-              <p title="Price Jagapathi">
-                Prince
-              </p>
+              <img
+                src="https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
+                alt="user-photo"
+              />
+              <p title="Price Jagapathi | Back-End Developer">Prince</p>
             </td>
             <td class="team-cell">
-              <img src="https://xsgames.co/randomusers/assets/avatars/female/2.jpg" alt="user-photo"/>
-              <p title="Kriti Patel">
-                Kriti
-              </p>
+              <img
+                src="https://xsgames.co/randomusers/assets/avatars/female/2.jpg"
+                alt="user-photo"
+              />
+              <p title="Kriti Patel | Back-End Developer">Kriti</p>
             </td>
             <td class="team-cell">
-              <img src="https://xsgames.co/randomusers/assets/avatars/male/3.jpg" alt="user-photo"/>
-              <p title="Akram Shaikh">
-                Akram
-              </p>
+              <img
+                src="https://xsgames.co/randomusers/assets/avatars/male/3.jpg"
+                alt="user-photo"
+              />
+              <p title="Akram Shaikh | SEO Expert">Akram</p>
             </td>
           </tr>
           <tr class="team-row">
             <td class="team-cell">
-              <img src="https://xsgames.co/randomusers/assets/avatars/male/4.jpg" alt="user-photo"/>
-              <p title="Raja Dhoundiyal">
-                Raja
-              </p>
+              <img
+                src="https://xsgames.co/randomusers/assets/avatars/male/4.jpg"
+                alt="user-photo"
+              />
+              <p title="Raja Dhoundiyal | Devops Engineer">Raja</p>
             </td>
             <td class="team-cell">
-              <img src="https://xsgames.co/randomusers/assets/avatars/female/4.jpg" alt="user-photo"/>
-              <p title="Mamidi Karishma">
-                Karishma
-              </p>
+              <img
+                src="https://xsgames.co/randomusers/assets/avatars/female/4.jpg"
+                alt="user-photo"
+              />
+              <p title="Mamidi Karishma | UI/UX Designer">Karishma</p>
             </td>
             <td class="team-cell">
-              <img src="https://xsgames.co/randomusers/assets/avatars/male/5.jpg" alt="user-photo"/>
-              <p title="Mahmed Aslam">
-                Aslam
-              </p>
+              <img
+                src="https://xsgames.co/randomusers/assets/avatars/male/5.jpg"
+                alt="user-photo"
+              />
+              <p title="Mahmed Aslam | Cyber Security Expert">Aslam</p>
             </td>
             <td class="team-cell">
-              <img src="https://xsgames.co/randomusers/assets/avatars/female/5.jpg" alt="user-photo"/>
-              <p title="Nagma Naduvinamani">
-                Nagma
-              </p>
+              <img
+                src="https://xsgames.co/randomusers/assets/avatars/female/5.jpg"
+                alt="user-photo"
+              />
+              <p title="Nagma Naduvinamani | AI/ML Engineer">Nagma</p>
             </td>
             <td class="team-cell">
-              <img src="https://xsgames.co/randomusers/assets/avatars/male/6.jpg" alt="user-photo"/>
-              <p title="Vishal Rajput">
-                Vishal
-              </p>
+              <img
+                src="https://xsgames.co/randomusers/assets/avatars/male/6.jpg"
+                alt="user-photo"
+              />
+              <p title="Vishal Rajput | Product Manager">Vishal</p>
             </td>
           </tr>
         </table>
@@ -643,7 +718,7 @@
               <label for="name">Phone<sup>*</sup></label>
             </div>
             <div class="form-input">
-              <input type="tel"  required placeholder="987XXXXXXX" />
+              <input type="tel" required placeholder="987XXXXXXX" />
             </div>
           </div>
           <div class="form-item">
@@ -660,11 +735,11 @@
               ></textarea>
             </div>
           </div>
-          
+
           <div class="form-cta">
-              <button>
-                Send Message <i class="fa-solid fa-arrow-right"></i>
-              </button>
+            <button>
+              Send Message <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </form>
       </section>
