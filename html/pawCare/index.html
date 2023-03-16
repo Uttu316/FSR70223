@@ -72,6 +72,7 @@
         padding: 40px;
         text-align: center;
         font-size: 20px;
+        margin-top: 40px;
       }
       .categories {
         text-align: center;
@@ -317,6 +318,33 @@
         color: #ffc12d;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 600;
+      }
+      #blogs .section-title{
+        color: #ffc12d;
+      }
+      .blogs-container{
+        margin: 60px auto;
+        max-width: 90%;
+        display: flex;
+        justify-content: space-around;
+        height: 400px;
+        align-items: center;
+      }
+      .blog-item{
+        width: 30%;
+        min-width:300px;
+       
+      }
+      .blog-item iframe{
+        height: 300px;
+      }
+      .blog-item iframe,.blog-item video{
+        width: 100%;
+        border-radius: 8px;
+      }
+      .blog-item video{
+        height: 400px;
+        object-fit: cover;
       }
     </style>
   </head>
@@ -592,7 +620,8 @@
       <section class="section" id="donate">
         <h3 class="section-title">
           We know you love paws, so do we. Please
-          <b class="special-green">Donate</b> and help other paws to live better  💛
+          <b class="special-green">Donate</b> and help other paws to live better
+          💛
         </h3>
         <div class="donate-btn">
           <button>
@@ -746,6 +775,37 @@
       <div class="wave">
         <img src="./assets/waves.svg" />
       </div>
+
+      <section class="section" id="blogs">
+        <h3 class="section-title">Blogs 📹</h3>
+
+        <div class="blogs-container">
+          <div class="blog-item">
+            <iframe
+              src="https://www.youtube.com/embed/UVjQyvlO0aM"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+
+          <div class="blog-item">
+            <video src="./assets/pets.mp4" controls loop type="video/mp4" class="blog-video">
+            </video>
+          </div>
+          <div class="blog-item">
+            <iframe
+              src="https://www.youtube.com/embed/uvNZHnSIZKY"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       Created by FSR70223 batch with ❤️ | Copyright · 2023
