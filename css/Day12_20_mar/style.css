@@ -1,0 +1,44 @@
+/* descendant selector (space) */
+.box  li{
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* child selector (>) */
+.container>.bold-txt{
+    color: brown;
+}
+/* child selector (>) */
+.container > i{
+    color: gray;
+}
+
+/* adjacent sibling selector (+) */
+p+b{
+    color: gold;
+}
+/* general sibling selector (~) */
+p ~ i{
+    color: silver;
+}
+
+div.child-container{
+    border: 2px solid brown;
+}
+
+
+input[type="number"]{
+    background-color: aquamarine;
+}
+
+input[data-id="name"]{
+    background-color: blueviolet;
+}
+input[type="email"]{
+    background-color: blue;
+}
+
+
+div p:first-child{
+    color: darkgreen;
+}

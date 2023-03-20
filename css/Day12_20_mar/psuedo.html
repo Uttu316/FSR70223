@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Psuedo Selector</title>
+    <style>
+      .section {
+        border: 2px solid sienna;
+        padding: 40px;
+      }
+      .section > .child-box {
+        padding: 20px;
+      }
+       .child-box:first-child {
+        background-color: yellow;
+      }
+
+        .child-box:last-child {
+        background-color: coral;
+      }
+      .section .child-box:nth-child(3){
+        background-color: darkmagenta;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section">
+      <div class="child-box">1</div>
+      <div class="child-box">2</div>
+      <div class="child-box">3</div>
+      <div class="child-box">4</div>
+      <div class="child-box">5</div>
+      <div class="child-box">6</div>
+      <p> I am P</p>
+    </div>
+    <section>
+      <div class="child-box">1</div>
+      <div class="child-box">2</div>
+      <div class="child-box">3</div>
+      <div class="child-box">4</div>
+      <div class="child-box">5</div>
+      <div class="child-box">6</div>
+      <p> I am P</p>
+    </section>
+    <article>
+        <div class="child-box">child</div>
+    </article>
+  </body>
+</html>
