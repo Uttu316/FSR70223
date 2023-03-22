@@ -6,6 +6,7 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 .header {
   background-color: #ffc12d;
@@ -32,7 +33,7 @@ html {
   color: white;
   border-bottom: 2px solid white;
 }
-.hero-banner{
+.hero-banner {
   position: relative;
 }
 .hero-banner-img {
@@ -105,6 +106,7 @@ html {
   margin: 20px;
   box-shadow: 4px 4px 4px #ccc;
   display: inline-block;
+  background-color: white;
 }
 .card-img {
   height: 300px;
@@ -296,10 +298,10 @@ html {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
 }
-#blogs .section-title{
+#blogs .section-title {
   color: #ffc12d;
 }
-.blogs-container{
+.blogs-container {
   margin: 60px auto;
   max-width: 90%;
   display: flex;
@@ -307,43 +309,46 @@ html {
   height: 400px;
   align-items: center;
 }
-.blog-item{
+.blog-item {
   width: 30%;
-  min-width:300px;
- 
+  min-width: 300px;
 }
-.blog-item iframe{
+.blog-item iframe {
   height: 300px;
 }
-.blog-item iframe,.blog-item video{
+.blog-item iframe,
+.blog-item video {
   width: 100%;
   border-radius: 8px;
 }
-.blog-item video{
+.blog-item video {
   height: 400px;
   object-fit: cover;
 }
 
-.hero-banner-content{
+.hero-banner-content {
   position: absolute;
   top: 70px;
   left: 50px;
   width: 50%;
 }
 
-.hero-banner-content h1{
+.hero-banner-content h1 {
   font-size: 42px;
   font-family: "Roboto Mono", monospace;
   font-weight: 700;
   margin-bottom: 20px;
 }
-.hero-banner-content p{
+.hero-banner-content p {
   color: white;
   font-size: 32px;
 }
-.hero-banner-content a{
+.hero-banner-content a {
   text-decoration: none;
-  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 200px;
   margin-top: 40px;
   display: block;
@@ -354,4 +359,55 @@ html {
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
+  text-transform: uppercase;
+  padding: 14px;
+  padding-bottom: 10px;
+}
+.hero-banner-content a > .underline {
+  visibility: hidden;
+  height: 2px;
+  width: 105px;
+  margin: 0 auto;
+  margin-top: 2px;
+  background-color: whitesmoke;
+  display: block;
+}
+.hero-banner-content a:hover .underline {
+  visibility: visible;
+}
+#menu,#cats {
+  position: relative;
+}
+.blob.right{
+  position: absolute;
+  height: 1000px;
+  width: 700px;
+  top: 0px;
+  right: -400px;
+  z-index: -1;
+}
+.blob.right img {
+  height: 1000px;
+}
+
+.blob.left{
+  position: absolute;
+  height: 1000px;
+  width: 700px;
+  top: -400px;
+  left: -450px;
+  z-index: -1;
+}
+.blob.left img {
+  height: 1000px;
+}
+.blob.bottom{
+  position: absolute;
+  height: 1000px;
+  bottom: -650px;
+  right: -380px;
+  z-index: -1;
+}
+.blob.bottom img {
+  height: 1000px;
 }
