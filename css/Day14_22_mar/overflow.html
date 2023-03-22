@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overlow </title>
+    <style>
+        .container{
+            border: 2px solid gray;
+            padding: 40px;
+            margin: 40px;
+            height: 400px;
+           overflow: hidden;
+        }
+        .box{
+            height: 200px;
+            width: 500px;
+            min-width: 500px;
+            background-color: goldenrod;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+        .image-card{
+            height: 200px;
+            width: 200px;
+            border: 2px solid red;
+            border-radius: 20px;
+        }
+        .image-card img{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">I am Box</div>
+      <div class="box">I am Box</div>
+      <div class="box">I am Box</div>
+    </div>
+
+    <div class="image-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png"/>
+    </div>
+  </body>
+</html>
