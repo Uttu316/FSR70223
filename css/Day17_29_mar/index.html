@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veiwport</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .vw{
+            width: 100vw;
+            background-color: aqua;
+
+        }
+        .vh{
+            height: 100vh;
+            background-color: gold;
+            padding: 40px;
+        }
+        @media(min-width:600px) {
+            .vw  {
+                background-color: blue;
+            }
+            h1{
+                color: pink;
+            }
+            
+        }
+        @media(min-width: 768px) {
+            .vw  {
+                background-color: coral;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .vw  {
+                background-color: deeppink;
+            }
+        }
+        @media (min-width: 1200px) {
+            .vw  {
+                background-color: brown;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>
+    Veiw port VW & VH
+    </h1>
+    <div class="vw">
+        VW
+    </div>
+    <div class="vh">
+        VH
+    </div>
+</body>
+</html>
