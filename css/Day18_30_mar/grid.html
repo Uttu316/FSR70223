@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+      .grid-container {
+        border: 2px solid brown;
+        display: grid;
+        /* width */
+        grid-template-columns: auto auto auto;
+        /* height */
+        grid-template-rows: 200px auto auto;
+        /* column-gap:20px;
+        row-gap: 20px; */
+        gap: 20px 40px;
+      }
+      .grid-item {
+        font-size: 32px;
+        background-color: gold;
+      }
+
+      .layout-grid-container {
+        display: grid;
+        grid-template-areas:
+          "header header header header header"
+          "menu menu main main right"
+          "menu menu footer footer footer";
+      }
+      .layout-grid-container > div {
+        background-color: bisque;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+        border: 4px solid brown;
+      }
+      .item1 {
+        grid-area: header;
+      }
+      .item2 {
+        grid-area: menu;
+      }
+      .item3 {
+        grid-area: main;
+      }
+      .item4 {
+        grid-area: right;
+      }
+      .item5 {
+        grid-area: footer;
+      }
+      .flex {
+        border: 2px solid brown;
+        padding: 20px;
+        display: flex;
+        margin: 40px;
+        gap: 20px;
+      }
+      .flex-item {
+        padding: 40px;
+        background-color: gold;
+      }
+      #item-3{
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+      #item-8{
+        grid-row-start: 1;
+        grid-row-end:2 ;
+      }
+      #item-8 img{
+        height: 100%;
+        width: 100%;
+      }
+      #item-2{
+        grid-row-start: 3;
+        grid-row-end:4 ;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Grid in css</h1>
+    <div class="grid-container">
+      <div class="grid-item">1</div>
+      <div class="grid-item" id="item-2">2</div>
+      <div class="grid-item" id="item-3">3</div>
+      <div class="grid-item">4</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">6</div>
+      <div class="grid-item">7</div>
+      <div class="grid-item" id="item-8">
+        <img src="https://placedog.net/500?id=1"  />
+      </div>
+      <div class="grid-item">9</div>
+    </div>
+
+    <div class="layout-grid-container">
+      <div class="item1">Header</div>
+      <div class="item2">Menu</div>
+      <div class="item3">Main</div>
+      <div class="item4">Right</div>
+      <div class="item5">Footer</div>
+    </div>
+
+    <div class="flex">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+      <div class="flex-item">4</div>
+      <div class="flex-item">4</div>
+      <div class="flex-item">4</div>
+      <div class="flex-item">4</div>
+      <div class="flex-item">4</div>
+    </div>
+  </body>
+</html>
