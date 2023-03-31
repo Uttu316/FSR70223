@@ -17,119 +17,180 @@
   color: white;
 }
 
-.store-hero{
-    height: 250px;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('../assets/mobile-bg.avif');
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.store-hero {
+  height: 250px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../assets/mobile-bg.avif");
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.store-hero::before{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(255,255,255,0.4);
+.store-hero::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
 }
-.store-hero h2{
-    z-index: 1;
-    position: relative;
-    color: salmon;
-    font-size: 28px;
-    background-color: white;
-    padding: 10px;
-    text-align: center;
+.store-hero h2 {
+  z-index: 1;
+  position: relative;
+  color: salmon;
+  font-size: 28px;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
 }
-.store-heading{
-    margin: 20px auto;
-    text-align: center;
-    padding: 10px;
+.store-heading {
+  margin: 20px auto;
+  text-align: center;
+  padding: 10px;
 }
-.store-heading-title{
-    font-size: 22px;
-    color: brown;
+.store-heading-title {
+  font-size: 22px;
+  color: brown;
 }
-.store-heading-desc{
-    font-size: 18px;
-    color: gray;
-    margin-top: 8px;
+.store-heading-desc {
+  font-size: 18px;
+  color: gray;
+  margin-top: 8px;
 }
-.store-filters{
-    display: flex;
-    margin-top: 20px;
-    justify-content: space-between;
-    padding: 10px;
-    align-items: center;
+.store-filters {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
 }
-.store-categories{
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.store-categories {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.store-category{
-    background-color: salmon;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 16px;
-}
-
-.store-products{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    margin: 20px auto;
-    gap: 20px;
-    justify-content: center;
-}
-.store-product{
-    border: 1px solid coral;
-    padding: 8px;
-    border-radius: 8px;
-    background-color: white;
-    width: 100%;
-    box-shadow: 4px 4px 4px #ccc;
-    overflow: hidden;
+.store-category {
+  background-color: salmon;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
 }
 
-.store-product-img{
-    height: 200px;
-    width: 100%;
+.store-products {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 20px auto;
+  gap: 20px;
+  justify-content: center;
 }
-.store-product-title{
-    font-size: 20px;
-    margin-top: 8px;
+.store-product {
+  border: 1px solid coral;
+  border-radius: 8px;
+  background-color: white;
+  width: 100%;
+  box-shadow: 4px 4px 4px #ccc;
+  overflow: hidden;
 }
-.store-product-desc{
-    margin-top: 8px;
-    font-size: 14px;
-    color: gray;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+.store-product-img {
+  position: relative;
+  cursor: pointer;
+}
+.store-product-details {
+  padding: 8px;
+}
+.store-product-img img {
+  height: 200px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.store-product-title {
+  font-size: 20px;
+  margin-top: 8px;
+}
+.store-product-desc {
+  margin-top: 8px;
+  font-size: 14px;
+  color: gray;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.store-product-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.price {
+  color: #00be00;
+}
+.store-product-atc button {
+  background-color: salmon;
+  padding: 8px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
+.store-product:hover .store-product-img::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  content: "";
+  z-index: 2;
 }
-.store-product-actions{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
+.store-product-img::after{
+  display: none;
+  content: 'View Product';
+  background-color: brown;
+  color: white;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  height: 80px;
+  width: 80px;
+  text-align: center;
+  transform: translate(-50%,-50%);
 }
-.price{
-    color:  #00be00;
+.store-product:hover .store-product-img::after{
+  display: flex;
 }
-.store-product-atc button{
-    background-color: salmon;
-    padding: 8px;
-    color: white;
-    border: none;
-    border-radius: 8px;
+.social-icon{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
+.fb-icon:hover{
+  background-color: blue;
+  color: white;
+}
+.twitter-icon:hover{
+  background-color: lightblue;
+  color: white;
+}
+.insta-icon{
+ color: maroon;
+}
+.insta-icon:hover{
+  background-color: maroon;
+  color: white;
+}
+
 @media (min-width: 720px) {
   .store-header {
     padding: 20px;
@@ -137,26 +198,26 @@
   .logo {
     font-size: 32px;
   }
-  .store-hero{
+  .store-hero {
     height: 320px;
-    background-image: url('../assets/bg-store.avif');
+    background-image: url("../assets/bg-store.avif");
   }
-  .store-product{
+  .store-product {
     width: 45%;
   }
-  .store-product-img{
-    height:280px
+  .store-product-img img {
+    height: 280px;
   }
-  .store-products{
+  .store-products {
     padding: 20px;
   }
-  .store-filters{
+  .store-filters {
     padding: 20px;
   }
 }
 
 @media (min-width: 960px) {
-    .store-product{
-        width: 32%;
-      }
+  .store-product {
+    width: 32%;
+  }
 }
