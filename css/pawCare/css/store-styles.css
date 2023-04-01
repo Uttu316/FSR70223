@@ -10,6 +10,19 @@
   justify-content: space-between;
   background-color: #ffc12d;
 }
+.common-header nav{
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.common-header nav a{
+  text-decoration: none;
+  color: white;
+  padding: 4px;
+  font-weight: 700;
+}
 
 .logo {
   font-size: 28px;
@@ -69,14 +82,17 @@
   gap: 10px;
 }
 .store-category {
-  background-color: salmon;
-  color: white;
-  border: none;
+  border: 1px solid salmon;
+  color: salmon;
   border-radius: 20px;
   padding: 8px 16px;
   cursor: pointer;
+  background-color: white;
 }
-
+.active-category{
+  background-color: salmon;
+  color: white;
+}
 .store-products {
   display: flex;
   flex-wrap: wrap;
@@ -218,5 +234,8 @@
 @media (min-width: 960px) {
   .store-product {
     width: 32%;
+  }
+  .common-header{
+    padding: 10px 20px;
   }
 }

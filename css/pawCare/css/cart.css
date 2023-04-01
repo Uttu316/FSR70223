@@ -6,6 +6,22 @@
     background-color: #ffc12d;
   }
 
+  .common-header nav{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .common-header nav a{
+    text-decoration: none;
+    color: white;
+    padding: 4px;
+    font-weight: 700;
+  }
+  .common-header nav a:hover{
+    border-bottom: 2px solid white;
+  }
   .logo {
     font-size: 28px;
     color: white;
@@ -20,4 +36,7 @@
    width: 260px;
    min-width: 260px !important;
     margin-right: 20px;
+  }
+  .cart-table{
+    min-width: 700px;
   }
