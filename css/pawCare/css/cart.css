@@ -1,0 +1,23 @@
+.common-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+    background-color: #ffc12d;
+  }
+
+  .logo {
+    font-size: 28px;
+    color: white;
+  }
+  .cart-prodcut-image{
+    max-height: 200px ;
+  }
+  .suggested-products{
+    overflow-x: scroll;
+  }
+  .suggested-product-item{
+   width: 260px;
+   min-width: 260px !important;
+    margin-right: 20px;
+  }
