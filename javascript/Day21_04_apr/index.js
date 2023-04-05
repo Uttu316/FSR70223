@@ -95,9 +95,3 @@ console.log(switchOff!==lightsOff);
 
 
 
-
-
-
-
-
-
