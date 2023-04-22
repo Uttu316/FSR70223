@@ -7,8 +7,7 @@ function handleForm() {
 
   let formValues = {};
   form.addEventListener("input", function (event) {
-    const value = event.target.value;
-    const name = event.target.name;
+    const { name, value } = event.target;
     formValues[name] = value;
 
     const isValidate = validation(formValues);
@@ -31,8 +30,7 @@ function handleForm() {
 }
 
 function validation(formValues) {
-  const title = formValues.title || "";
-  const description = formValues.description || "";
+  const { title, description } = formValues;
 
   let isTitleValidated = false;
   let isDescriptionValidated = false;
@@ -140,8 +138,10 @@ function handleDeleteItem(elementId) {
 
 function getElementIndex(elementId) {
   const elementToDlt = document.getElementById(elementId);
-  const parent = elementToDlt.parentNode;
-  const allChildren = parent.childNodes;
+
+  const {
+    parentNode: { childNodes: allChildren },
+  } = elementToDlt||{};
 
   let targetIndex = -1;
   for (let i = 0; i < allChildren.length; i++) {
@@ -159,7 +159,6 @@ function handleEditItem(elementId) {
   const editForm = document.getElementById("editFormModal");
   editForm.setAttribute("data-for", elementId);
   handleEditForm(elementId);
-  
 }
 
 function fillEditForm(elementId) {
@@ -200,11 +199,11 @@ function handleEditForm(elementId) {
         saveBtn.disabled = true;
       }
     });
-    handleSaveButton(elementId,formValues)
+    handleSaveButton(elementId, formValues);
   }
 }
 
-function handleSaveButton(elementId,formValues) {
+function handleSaveButton(elementId, formValues) {
   const saveBtn = document.getElementById("save-btn");
   saveBtn.addEventListener("click", function () {
     // after submit edit form, close the form
