@@ -48,8 +48,6 @@ function addTodos(newData) {
           // response successful
           const data = JSON.parse(response);
           createList(data)
-        } else if (status === 401) {
-          // unautorized
         } else {
           // Something went wrong, Please try later
           showToast('Something went wrong, Please try later')
@@ -57,7 +55,7 @@ function addTodos(newData) {
       }
     };
   }
-  
+
 function startLoader(){
     const loader = document.getElementById('loader');
     loader.classList.replace('d-none','d-flex')
