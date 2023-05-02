@@ -83,9 +83,9 @@ function createList(list=[]){
     const ul = document.createElement('ul');
 
     list.forEach(function(item){
-        const li = document.createElement('li');
-        li.innerHTML = item.title
-        ul.append(li)
+        const card = createCard(item);
+       
+        ul.append(card)
     })
 
     const container = document.getElementById('list-container');
@@ -94,5 +94,10 @@ function createList(list=[]){
 
 }
 
+function createCard(item){
+  const li = document.createElement('li');
+  li.innerHTML = item.title
+  return li
+}
 
 getTodos()
