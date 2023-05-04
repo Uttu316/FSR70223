@@ -1,0 +1,37 @@
+.heading{
+    color:pink;
+}
+
+
+.card{
+    width: 260px;
+    box-shadow: 4px 4px 4px #ccc;
+    display: inline-block;
+}
+.round{
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card img{
+    height: 200px;
+    width: 100%;
+}
+
+.product-title{
+    font-size: 16px;
+    margin: 10px;
+}
+.brand{
+    color: grey;
+    font-size: 14px;
+    margin: 0px 10px 8px;
+}
+
+.price{
+    color: green;
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 8px;
+    margin: 0px 10px 8px;
+}
