@@ -234,7 +234,7 @@ $(document).ready(() => {
     const lastPrice = $('.price').last();
     lastPrice.css({'color':"red",fontSize:20})
 
-    lastPrice.html('Rs. 999999')
+    lastPrice.html()
 
     const cards = $('.card');
 
@@ -258,13 +258,6 @@ $(document).ready(() => {
             console.log('Hover')
         }
     })
-
-
-    
-    
-
-
-
    
 });
 

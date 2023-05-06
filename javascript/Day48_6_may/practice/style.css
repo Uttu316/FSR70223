@@ -1,0 +1,9 @@
+
+.card{
+    box-shadow: 4px  4px 4px #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    border: 2px solid saddlebrown;
+    display: inline-block;
+    margin-right: 20px;
+}
