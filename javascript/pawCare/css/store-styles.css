@@ -10,14 +10,14 @@
   justify-content: space-between;
   background-color: #ffc12d;
 }
-.common-header nav{
+.common-header nav {
   display: flex;
 
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-.common-header nav a{
+.common-header nav a {
   text-decoration: none;
   color: white;
   padding: 4px;
@@ -33,7 +33,7 @@
   height: 320px;
   position: relative;
 }
-.store-hero img{
+.store-hero img {
   height: 320px;
   width: 100%;
 }
@@ -45,7 +45,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   z-index: 12;
 }
-.store-hero::after{
+.store-hero::after {
   content: "Store for your Paws";
   position: absolute;
   color: salmon;
@@ -53,10 +53,10 @@
   z-index: 13;
   padding: 8px;
   font-size: 32px;
-  top:50%;
+  top: 50%;
   left: 50%;
   border-radius: 4px;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 .store-hero h2 {
   z-index: 1;
@@ -101,7 +101,7 @@
   cursor: pointer;
   background-color: white;
 }
-.active-category{
+.active-category {
   background-color: salmon;
   color: white;
 }
@@ -157,13 +157,19 @@
 .price {
   color: #00be00;
 }
+
 .store-product-atc button {
-  background-color: salmon;
   padding: 8px;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+.go-to-cart-btn {
+  background-color: #ffc12d;
+}
+.add-to-cart-btn {
+  background-color: salmon;
 }
 
 .store-product:hover .store-product-img::before {
@@ -176,9 +182,9 @@
   content: "";
   z-index: 2;
 }
-.store-product-img::after{
+.store-product-img::after {
   display: none;
-  content: 'View Product';
+  content: "View Product";
   background-color: brown;
   color: white;
   font-size: 16px;
@@ -192,35 +198,35 @@
   height: 80px;
   width: 80px;
   text-align: center;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
-.store-product:hover .store-product-img::after{
+.store-product:hover .store-product-img::after {
   display: flex;
 }
-.social-icon{
+.social-icon {
   width: 40px;
   height: 40px;
   cursor: pointer;
 }
-.fb-icon:hover{
+.fb-icon:hover {
   background-color: blue;
   color: white;
 }
-.twitter-icon:hover{
+.twitter-icon:hover {
   background-color: lightblue;
   color: white;
 }
-.insta-icon{
- color: maroon;
+.insta-icon {
+  color: maroon;
 }
-.insta-icon:hover{
+.insta-icon:hover {
   background-color: maroon;
   color: white;
 }
-.store-nav-item{
+.store-nav-item {
   position: relative;
 }
-#nav-cart-count{
+#nav-cart-count {
   background-color: salmon;
   padding: 4px;
   color: white;
@@ -234,7 +240,6 @@
   align-items: center;
   justify-content: center;
 }
-
 
 @media (min-width: 720px) {
   .store-header {
@@ -264,7 +269,7 @@
   .store-product {
     width: 32%;
   }
-  .common-header{
+  .common-header {
     padding: 10px 20px;
   }
 }
