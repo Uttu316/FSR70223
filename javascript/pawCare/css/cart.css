@@ -29,9 +29,7 @@
   .cart-prodcut-image{
     max-height: 200px ;
   }
-  .suggested-products{
-    overflow-x: scroll;
-  }
+
   .suggested-product-item{
    width: 260px;
    min-width: 260px !important;

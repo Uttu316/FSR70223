@@ -30,8 +30,9 @@ const storePage = () => {
   updateCartCount();
 };
 const cartPage = () => {
-  createCartList(cartProducts)
-  updateCartSummary()
+  createCartList(cartProducts);
+  updateCartSummary();
+  addSuggestedProductsCarousel()
 };
 
 const addHeroCarousel = () => {
@@ -42,6 +43,41 @@ const addHeroCarousel = () => {
     dots: true,
   });
 };
+const addSuggestedProductsCarousel = ()=>{
+
+  $('.suggested-products').slick({
+    infinite: false,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    arrows:true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+}
 
 const getProducts = () => {
   $.get(endpoints.products, (data) => {
@@ -158,7 +194,16 @@ const handleAddtoCartBtn = (productCard, productInfo) => {
 };
 const handleGotoCartBtn = (productCard, productInfo) => {
   const goToCart = productCard.find(".go-to-cart-btn");
-  goToCart.click(function (e) {});
+  goToCart.click(function (e) {
+    const {id:productId} = productInfo||{}
+    const pathofProduct = location.pathname.replace(
+      "store.html",
+      `cart.html`
+    );
+    location.hash =  productId;
+     location.pathname =  pathofProduct;
+  });
+  
 };
 const updateAddtoCartBtn = (addToCartBtn) => {
   addToCartBtn.removeClass("add-to-cart-btn");
@@ -183,18 +228,17 @@ const isProductInCart = (productInfo) => {
   return !!cartProducts.find((i) => i.id === productInfo.id);
 };
 
-
-const createCartList = (cartData)=>{
-  cartData.forEach((prodcut)=>{
-    const cartitem = $(getTemplateForCartItem(prodcut))
-    handleQuantity(cartitem,prodcut)
-    $('#cart-list').append(cartitem)
-  })
-}
+const createCartList = (cartData) => {
+  cartData.forEach((prodcut) => {
+    const cartitem = $(getTemplateForCartItem(prodcut));
+    handleQuantity(cartitem, prodcut);
+    $("#cart-list").append(cartitem);
+  });
+};
 const getTemplateForCartItem = (productInfo) => {
-  const {name,preview,price,id} = productInfo||{}
+  const { name, preview, price, id, quantity } = productInfo || {};
   return `
-  <tr>
+  <tr id=${id}>
   <th scope="row">${id}</th>
   <td>
     <img
@@ -205,9 +249,11 @@ const getTemplateForCartItem = (productInfo) => {
   <td>${name}</td>
   <td>
     <select class="product-cart-quantity">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
+      <option ${
+        !quantity || quantity === 1 ? "selected" : ""
+      } value="1">1</option>
+      <option ${quantity === 2 ? "selected" : ""}  value="2">2</option>
+      <option ${quantity === 3 ? "selected" : ""}  value="3">3</option>
     </select>
   </td>
   <td>
@@ -217,27 +263,39 @@ const getTemplateForCartItem = (productInfo) => {
   `;
 };
 
-const handleQuantity=(cartitem,prodcut,)=>{
-  cartitem.change(function(e){
-    const {value} = e.target;
+const handleQuantity = (cartitem, prodcut) => {
+  cartitem.change(function (e) {
+    const { value } = e.target;
     const prodcutId = prodcut.id;
-    updateQuantity(value,prodcutId)
-  })
-}
+    updateQuantity(value, prodcutId);
+  });
+};
 
+const updateQuantity = (quantity, productId) => {
+  const index = cartProducts.findIndex((i) => i.id == productId);
+  if (index !== -1) {
+    const updatedProdcutInfo = cartProducts[index];
+    updatedProdcutInfo.quantity = Number(quantity);
+    addCartToLocal();
+    updateCartSummary();
+  }
+};
 
-const updateQuantity = (quantity,productId)=>{
-   const index = cartProducts.findIndex((i)=>i.id==productId);
-   if(index!==-1){
-      const updatedProdcutInfo = cartProducts[index];
-      updatedProdcutInfo.quantity = Number(quantity);
-      addCartToLocal()
-   }
-}
+const updateCartSummary = () => {
+  let totalPrice = 0;
 
+  cartProducts.forEach((i) => {
+    const productPrice = i.price * (i.quantity || 1);
+    totalPrice += productPrice;
+  });
+  let discount = calcutateDiscount(totalPrice);
+  let grandTotal = totalPrice - discount;
 
-const updateCartSummary = ()=>{
-  let totalPrice = 0
-  cartProducts.forEach((i)=>totalPrice+=i.price);
-  $('#sub-total').html(`${totalPrice}₹`)
-}
+  $("#sub-total").html(`${totalPrice}₹`);
+  $("#summary-discount").html(`${discount}₹ (10%)`);
+  $("#summary-grand-total").html(`${grandTotal}₹`);
+};
+
+const calcutateDiscount = (totalPrice, discount = 10) => {
+  return parseInt((discount * totalPrice) / 100);
+};
