@@ -38,3 +38,12 @@
   .cart-table{
     min-width: 700px;
   }
+  #slider-arrow-right,#slider-arrow-left{
+    height: 75px;
+    width: 40px;
+    background: lightsalmon;
+    color: white;
+  }
+  #slider-arrow-left{
+    left: -46px;
+  }

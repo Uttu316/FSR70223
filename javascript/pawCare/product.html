@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@500&family=Tilt+Neon&family=Tilt+Prism&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./css/product.css" rel="stylesheet" />
+   
+</head>
+  <body>
+    <header class="common-header">
+      <h1 class="logo">Paw's Care</h1>
+      <nav>
+        <a class="store-nav-item" href="./index.html"> Home </a>
+        <a href="./store.html"> Store </a>
+        <a class="store-nav-item" href="./cart.html">
+          Cart <sup id="nav-cart-count" class="cart-count">0</sup>
+        </a>
+      </nav>
+    </header>
+
+    <div id="product-details">
+      <div class="product-preview">
+        <img src="" alt="product-preview" id="preview" />
+      </div>
+      <div class="product-info">
+        <h2 class="product-title" id="title">Product Title</h2>
+        <h4 class="prduct-brand" id="brand">Product Brand</h4>
+        <div class="product-price">
+          <span class="product-price-label">Price: Rs</span
+          ><span class="product-price-value" id="price">5000</span>
+        </div>
+        <div class="product-desc-container">
+          <p class="product-desc-label">Description</p>
+          <p class="product-description" id="description">
+            Navy solid sweatshirt with patchwork, has a round neck, long
+            sleeves, straight hem
+          </p>
+        </div>
+        <div class="product-privews-container">
+          <p class="product-privews-label">Product Preview</p>
+          <div class="product-privews">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script src="./scripts/product.js"></script>
+  </body>
+</html>
