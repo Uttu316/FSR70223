@@ -1,6 +1,11 @@
 const PRODUCT_URL = "https://5d76bf96515d1a0014085cf9.mockapi.io/product";
+const getLocalCartData = () => {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+};
+var cartProducts = getLocalCartData();
 $(() => {
   getProductDetails();
+  updateCartCount();
 });
 
 const getProductDetails = () => {
@@ -61,3 +66,8 @@ const onPhotoClick = (photoEl,photo)=>{
         $(this).addClass('privew-active')
     })
 }
+
+const updateCartCount = () => {
+  const cartText = $("#nav-cart-count");
+  cartText.html(cartProducts.length);
+};

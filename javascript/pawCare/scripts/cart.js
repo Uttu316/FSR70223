@@ -15,11 +15,13 @@ const cartPage = () => {
 };
 
 const createCartList = (cartData) => {
-  cartData.forEach((prodcut) => {
-    const cartitem = $(getTemplateForCartItem(prodcut));
-    handleQuantity(cartitem, prodcut);
-    $("#cart-list").append(cartitem);
-  });
+  if(Array.isArray(cartData)){
+    cartData.forEach((prodcut) => {
+      const cartitem = $(getTemplateForCartItem(prodcut));
+      handleQuantity(cartitem, prodcut);
+      $("#cart-list").append(cartitem);
+    });
+  }
 };
 
 const getTemplateForCartItem = (productInfo) => {
