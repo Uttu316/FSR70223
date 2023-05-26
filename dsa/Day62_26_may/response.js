@@ -1,0 +1,1 @@
+{ head: Node { data: 4, next: null } }
