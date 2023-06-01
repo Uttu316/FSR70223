@@ -1,0 +1,21 @@
+.list_section {
+  padding: 20px;
+  margin: 20px;
+}
+
+.list_card {
+  border: 1px solid #ccc;
+  box-shadow: 4px 4px 4px #ccc;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.list_card_name {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.list_card_age {
+  color: brown;
+  font-size: 28px;
+}

@@ -2,28 +2,3 @@
 .app{
 font-family: 'Lato', sans-serif;
 }
-header{
-  font-size: 32px;
-}
-.list-section{
-  padding: 20px;
-  margin: 20px;
- 
-}
-
-.list-card{
-  border: 1px solid #ccc;
-  box-shadow: 4px 4px 4px #ccc;
-  padding: 8px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-.list-card-name{
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-.list-card-age{
-  color: brown;
-  font-size: 28px;
-}

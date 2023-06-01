@@ -1,33 +1,19 @@
 import React from "react";
+import { users as USERS_DATA } from "../../utils/data";
 import ListItem from "./listItem";
-
-const users = [
-  {
-    name: "Raja",
-    age: 32,
-  },
-  {
-    name: "Sharank",
-    age: 21,
-  },
-  {
-    name: "Jainendra",
-    age: 12,
-  },
-  {
-    name: "Nagma",
-    age: 22,
-  },
-];
+import styles from "./list.module.css"
 
 const List = () => {
+
   return (
-    <section className="list-section">
-      {users.map((user) => (
-       <ListItem user={user} />
+    <section className={styles.list_section}>
+      {USERS_DATA.map((user) => (
+       <ListItem info={user} />
       ))}
     </section>
   );
 };
 
 export default List
+
+

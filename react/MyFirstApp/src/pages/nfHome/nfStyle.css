@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .nf-hero-section {
+    height: 600px;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/76c10fc9-7ccd-4fbf-bc59-f16a468921ca/4fb4af6e-d0ca-4c7f-b004-b34226727e55/IN-en-20230529-popsignuptwoweeks-perspective_alpha_website_small.jpg");
+  }
+  .nf-hero-container {
+    position: relative;
+    z-index: 3;
+  }
+  .nf-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 24px;
+  }
+  .nf-header-logo {
+  }
+  .nf-header-logo svg {
+    width: 70px;
+    position: relative;
+    top: 4px;
+  }
+  .hero-section::after {
+    position: absolute;
+    content: "";
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+  
+  .nf-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nh-header-action-laguage {
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+  }
+  .nh-header-action-laguage select {
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+  }
+  .nf-btn {
+  
+    padding: 4px 16px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  
+  
+  .nf-hero-content{
+      margin: 100px auto 0px;
+      padding: 0px 24px;
+      text-align: center;
+      color: white;
+  }
+  .nf-hero-content-title{
+      font-size: 38px;
+      font-weight: 700;
+    
+  }
+  .nf-hero-content-subtitle{
+      font-size: 20px;
+      margin-top: 20px;
+  }
+  .nf-subscription-section{
+      margin: 0px auto;
+      margin-top: 40px;
+      text-align: center;
+      color: white;
+     padding: 0px 24px;
+  }
+  .nf-subscription-title{
+      font-size: 18px;
+  }
+  .nf-subscription-form{
+      margin-top: 20px;
+  }
+  .nf-subscription-form form{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap:10px;
+  }
+  .nf-subscription-input-item{
+      position: relative;
+      display: inline-flex;
+  }
+  .nf-subscription-input-item input{
+      border: 1px solid gray;
+      background-color: rgba(0,0,0,0.3);
+      border-radius: 4px;
+      padding: 24px 16px 8px;
+      min-width: 312px;
+      flex-grow: 1;
+      font-size: 20px;
+      outline: none;
+      color: white;
+  }
+  .nf-subscription-input-item input:focus{
+      outline: 1px solid white;
+      outline-offset: 2px;
+  }
+  
+  .nf-subscription-input-item label{
+      position: absolute;
+      top: 24px;
+      left:16px;
+      transition: all .5s;
+      color: rgba(255,255,255,0.7);
+  }
+  
+  .nf-subscription-input-item input:focus+label{
+      transform: translateY(-14px);
+      font-size: 12px;
+  }
+  .nf-lg-btn{
+      padding: 8px 20px;
+      font-size: 20px;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      height: 56px;
+  }
+  
+  .nf-btn-red{
+      background-color: #e50914;
+  }
+  .nf-btn-red:hover {
+      background: rgb(193, 17, 25);
+    }
+  
+    .nf-hr{
+      border:5px solid gray;
+    }
+  
+    .nf-promotional-banner{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      border-bottom: 5px solid gray;
+      background-color: black;
+      color: white;
+      text-align: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .nf-promotional-banner:first-child{
+      border-top: 5px solid gray;
+    }
+    .nf-promotional-heading{
+      font-size: 32px;
+    }
+    .nf-promotional-description{
+      margin-top: 10px;
+      font-size: 18px;
+    }
+    .nf-promotional-image{
+      width: 100%;
+      max-width: 500px;
+    }
+    .nf-promotional-image img{
+      height: 100%;
+      width: 100%;
+    }
+  
+    .nf-faqs{
+      padding: 40px 24px;
+      background-color: black;
+      color: white;
+    }
+    .nf-faqs-heading{
+      font-size: 32px;
+      text-align: center;
+    }
+    .nf-faq-accordians{
+      margin: 0 auto;
+      margin-top: 40px;
+      max-width: 1140px;
+  
+    }
+  
+   
+    .nf-accordion {
+      margin: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+    }
+    .nf-accordion input {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+    }
+    .accordion-label {
+      display: flex;
+      justify-content: space-between;
+      padding: 24px;
+      cursor: pointer;
+      background: #333;
+      color: #fff;
+      font-size: 20px;
+    }
+    .accordion-content {
+      max-height: 0;
+      padding: 0px 16px;
+      background: #333;
+      color: white;
+      transition: all 0.35s;
+      margin-top: 2px;
+      font-size: 16px;
+    }
+    .nf-accordion input:checked ~ .accordion-content {
+      max-height: 100vh;
+      padding: 1em;
+    }
+    .nf-accordion input:checked + .accordion-label i{
+      transform: rotate(45deg);
+    } 
+  
+  
+    @media (min-width:640px) {
+      .nf-promotional-banner{
+          flex-direction: row;
+          flex-wrap: nowrap;
+      }
+      .nf-promotional-banner:nth-child(even){
+          flex-direction: row-reverse;
+      }
+      .nf-promotional-image{
+          max-width: 460px;
+      }
+    }

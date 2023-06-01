@@ -1,15 +1,16 @@
 import React from "react";
 import Footer from "./components/footer";
 import Header from "./components/header";
-import List from "./components/list";
-import "./app.css"
-
+import UserList from "./components/list";
+import NFHome from "./pages/nfHome";
 const App = () => {
+
   return (
     <div className="app">
-      <Header />
-      <List />
-      <Footer />
+      {/* <Header />
+      <UserList />
+      <Footer /> */}
+      <NFHome/>
     </div>
   );
 };

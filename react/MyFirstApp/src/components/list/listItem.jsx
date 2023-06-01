@@ -1,10 +1,11 @@
 import React from "react";
+import styles from "./list.module.css";
 const ListItem = (props) => {
-    const {user} = props
+    const {info} = props;
   return (
-    <div className="list-card">
-      <p className="list-card-name">{user.name}</p>
-      <p className="list-card-age">{user.age}</p>
+    <div className={styles.list_card}>
+      <p className={styles.list_card_name}>{info.name}</p>
+      <p className={styles.list_card_age}>{info.age}</p>
     </div>
   );
 };

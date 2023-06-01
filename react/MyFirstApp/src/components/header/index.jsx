@@ -1,14 +1,11 @@
 import React from "react";
-
+import { title } from "../../utils/data";
+import style from  "./header.module.css"
 
 const Header =()=>{
     return (
-        <header style={{
-            padding:10,
-            background:'black',
-            color:'white'
-        }}>
-            <span>Logo</span>
+        <header className={style.header}>
+            <span className={style.title}>{title}</span>
         </header>
     )
 }

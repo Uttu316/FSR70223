@@ -1,4 +1,5 @@
 import React from "react";
+import CName from "../../utils/data";
 const footerStyle = {
     padding:20,
     background:'black',
@@ -11,7 +12,7 @@ const footerStyle = {
 const Footer = () => {
   return (
     <footer style={footerStyle}>
-      <p> Footer for react app. Made with ❤️</p>
+      <p> Footer for {CName}. Made with ❤️</p>
     </footer>
   );
 };
