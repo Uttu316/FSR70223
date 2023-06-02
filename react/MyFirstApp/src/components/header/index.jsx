@@ -10,3 +10,6 @@ const Header =()=>{
     )
 }
 export default Header
+
+
+// JSX -> Babel -> PureJS

@@ -1,6 +1,6 @@
 import React from "react";
 
-const NFAccordian = () => {
+const NFAccordians = () => {
   return (
     <div className="nf-faq-accordians">
       <Accordian
@@ -54,4 +54,4 @@ const Accordian = ({ title, desc, id }) => {
   );
 };
 
-export default NFAccordian
+export default NFAccordians

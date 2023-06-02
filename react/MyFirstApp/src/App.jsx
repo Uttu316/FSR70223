@@ -2,7 +2,9 @@ import React from "react";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import UserList from "./components/list";
+import Movies from "./pages/movies";
 import NFHome from "./pages/nfHome";
+
 const App = () => {
 
   return (
@@ -10,7 +12,8 @@ const App = () => {
       {/* <Header />
       <UserList />
       <Footer /> */}
-      <NFHome/>
+      {/* <NFHome/> */}
+      <Movies/>
     </div>
   );
 };

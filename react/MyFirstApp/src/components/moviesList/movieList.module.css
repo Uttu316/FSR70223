@@ -1,0 +1,49 @@
+.moviesListContainer{
+    margin: 40px auto;
+    max-width: 500px;
+}
+
+.movieListItem{
+    background-color: white;
+    box-shadow: 4px 4px 4px #ccc;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.movieListItemTitle{
+    color: gray;
+    font-size: 32px;
+    margin-bottom:8px;
+}
+
+
+
+.movieListItemSubtitle{
+    font-size: 22px;
+    color: darkgreen;
+    font-weight: 700;
+}
+.movieListItemPill{
+    border-radius: 12px;
+    background-color:salmon ;
+    color: white;
+    padding: 4px 16px;
+    font-size: 16px;
+    display: inline-block;
+    margin: 10px 0px;
+}
+.movieDetailsContainer{
+    background-color: beige;
+    border: 1px solid gray;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 600px;
+}
+.movieDetailsContainer h3{
+    text-align: center;
+    font-size: 30px;
+}
+.activeTab{
+    background-color: pink;
+}
