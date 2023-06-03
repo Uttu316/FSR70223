@@ -8,6 +8,10 @@ const MovieListItem = (props) => {
   const isActive = selectedTab ? selectedTab.id === id : false;
 
   const onClickItem = (e) => {
+    if(isActive){
+      selectTab(null);
+      return;
+    }
     selectTab(data);
   };
   return (

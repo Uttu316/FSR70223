@@ -47,3 +47,17 @@
 .activeTab{
     background-color: pink;
 }
+.emptyBox{
+    margin: 40px;
+}
+.emptyBoxImage{
+    height: 400px;
+    width: 100%;
+}
+.emptyBoxMsg{
+    font-size: 32px;
+    color: wheat;
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+}

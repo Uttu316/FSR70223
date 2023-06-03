@@ -1,0 +1,33 @@
+.searchBar {
+  margin: 0 auto;
+  max-width: 500px;
+}
+.searchBar form {
+  display: flex;
+  align-items: stretch;
+}
+.searchBar input {
+  width: 100%;
+  padding: 16px;
+  outline: none;
+  border-radius: 4px;
+  border: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size:18px ;
+}
+
+.searchBar input:focus {
+  outline: 2px solid salmon;
+}
+.searchBar input:focus + button{
+    outline: 2px solid salmon;
+}
+.searchBar button {
+  padding: 16px;
+  font-size: 22px;
+  border-radius: 4px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border: none;
+}
