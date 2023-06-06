@@ -1,4 +1,6 @@
 import React from "react";
+import ClassComponent from "./components/classComponents/class";
+import TodoList from "./components/classComponents/todoList";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import UserList from "./components/list";
@@ -13,7 +15,9 @@ const App = () => {
       <UserList />
       <Footer /> */}
       {/* <NFHome/> */}
-      <Movies/>
+      {/* <Movies/> */}
+      {/* <ClassComponent/> */}
+      <TodoList/>
     </div>
   );
 };
