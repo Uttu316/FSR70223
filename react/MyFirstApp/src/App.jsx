@@ -1,5 +1,6 @@
 import React from "react";
 import ClassComponent from "./components/classComponents/class";
+import LifeCycle from "./components/classComponents/lifeCycle";
 import TodoList from "./components/classComponents/todoList";
 import Footer from "./components/footer";
 import Header from "./components/header";
@@ -17,7 +18,8 @@ const App = () => {
       {/* <NFHome/> */}
       {/* <Movies/> */}
       {/* <ClassComponent/> */}
-      <TodoList/>
+      {/* <TodoList/> */}
+      <LifeCycle/>
     </div>
   );
 };
