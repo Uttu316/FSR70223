@@ -26,6 +26,7 @@ class LifeCycle extends Component {
     this.getData();
   }
   shouldComponentUpdate(nextProps, nextState) {
+    console.log(this.props,this.state)
     if (nextState.count > 6) {
       return false;
     } else {

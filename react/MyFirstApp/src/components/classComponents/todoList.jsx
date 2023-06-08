@@ -1,5 +1,7 @@
 import React from "react";
 import { Component } from "react";
+import PureTodoListBox from "./PureTodoList";
+import TodoListBox from "./todoListBox";
 
 class TodoList extends Component {
   constructor(props) {
@@ -61,7 +63,8 @@ class TodoList extends Component {
   };
 
   render() {
-    console.log(this.props)
+    console.log(this.props);
+    console.log('Parent')
     return (
       <div className="tl-container">
         <textarea
@@ -70,6 +73,7 @@ class TodoList extends Component {
           placeholder="Enter your task here"
           rows={5}
         />
+       
         {this.state.task.length >= 10 && (
           <div>
             {!this.state.editMode && (
@@ -80,23 +84,12 @@ class TodoList extends Component {
             )}
           </div>
         )}
-        <ul className="tl-list-container">
-          {this.state.allTasks.map((i) => (
-            <li key={i.id}>
-              <span>{i.task}</span>
-
-              <button
-                disabled={
-                  this.state.editTask && this.state.editTask.id === i.id
-                }
-                onClick={() => this.onDeleteItem(i.id)}
-              >
-                Delete
-              </button>
-              <button onClick={() => this.onEditItem(i)}>Edit</button>
-            </li>
-          ))}
-        </ul>
+         <PureTodoListBox
+          tasks={this.state.allTasks}
+          editTask={this.state.editTask}
+          onDeleteItem={this.onDeleteItem}
+          onEditItem={this.onEditItem}
+        />
       </div>
     );
   }

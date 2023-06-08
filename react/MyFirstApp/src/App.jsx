@@ -2,6 +2,7 @@ import React from "react";
 import ClassComponent from "./components/classComponents/class";
 import LifeCycle from "./components/classComponents/lifeCycle";
 import TodoList from "./components/classComponents/todoList";
+import Counter from "./components/counter";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import UserList from "./components/list";
@@ -19,7 +20,8 @@ const App = () => {
       {/* <Movies/> */}
       {/* <ClassComponent/> */}
       {/* <TodoList/> */}
-      <LifeCycle/>
+      {/* <LifeCycle/> */}
+      <Counter/>
     </div>
   );
 };
