@@ -1,39 +1,53 @@
-import { Chip, Stack } from "@mui/material";
+import { Chip, Skeleton, Stack } from "@mui/material";
 import React from "react";
-
-const categories = [
-  {
-    id: "groceries",
-    label: "Groceries",
-  },
-  {
-    id: "clothings",
-    label: "Clothings",
-  },
-  {
-    id: "accessories",
-    label: "Accessories",
-  },
-  {
-    id: "jwellery",
-    label: "Jwellery",
-  },
-];
-
+import { useEffect } from "react";
+import { useState } from "react";
+import { getCategories } from "../../actions/homeActions";
 
 const Categories = () => {
+  const [categories, setCategories] = useState(null);
+  const [apiStatus, setApiStatus] = useState("");
+
+  const fetchCategories = () => {
+    setApiStatus("loading");
+    getCategories()
+      .then((data) => {
+        setCategories(data || []);
+        setApiStatus("success");
+      })
+      .catch((err) => {
+        setApiStatus("error");
+      });
+  };
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
+  const showLoader = apiStatus === "loading";
+
   const onHandFilter = (id) => {};
   return (
-    <Stack direction={'row'} spacing={2}>
-      {categories.map(({ id, label }) => (
-        <Chip
-          label={label}
-          key={id}
-          size='medium'
-          variant="outlined"
-          onClick={() => onHandFilter(id)}
-        />
-      ))}
+    <Stack direction={"row"} spacing={2}>
+      {Array.isArray(categories) &&
+        categories.map(({ id, label }) => (
+          <Chip
+            label={label}
+            key={id}
+            size="medium"
+            variant="outlined"
+            onClick={() => onHandFilter(id)}
+          />
+        ))}
+      {showLoader &&
+        [0, 0, 0, 0].map((_, index) => (
+          <Skeleton
+            key={index}
+            variant="rounded"
+            sx={{ borderRadius: 20 }}
+            width={117}
+            height={32}
+          />
+        ))}
     </Stack>
   );
 };
