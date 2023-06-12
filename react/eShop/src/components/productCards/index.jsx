@@ -16,7 +16,13 @@ const ProductCard = (props) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
-        <CardMedia component="img" height="240" image={image} alt={title} />
+        <CardMedia
+          sx={{ objectFit: "contain" }}
+          component="img"
+          height="240"
+          image={image}
+          alt={title}
+        />
         <CardContent>
           <Typography
             sx={{ ...ellipses }}
@@ -35,7 +41,7 @@ const ProductCard = (props) => {
           </Typography>
           <Chip sx={{ mt: 2 }} label={category.toUpperCase()} />
           <Typography
-            sx={{ ...ellipses, }}
+            sx={{ ...ellipses }}
             mt={2}
             fontWeight={700}
             color="green"
