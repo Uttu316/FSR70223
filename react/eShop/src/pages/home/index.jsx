@@ -7,10 +7,10 @@ import ProductList from "../../components/productList";
 const Home = () => {
   return (
     <div>
-      <Header />
-      <HeroBanner/>
-      <Filters/>
-      <ProductList/>
+      <Header showLogin={true} />
+      <HeroBanner />
+      <Filters />
+      <ProductList />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { login } from "../../actions/authActions";
 
 class Login extends Component {
@@ -77,6 +78,7 @@ class Login extends Component {
             {isLoading ? "Wait for a moment" : "Login"}
           </button>
         </form>
+        <Link to={"/"}>Go to Home</Link>
       </div>
     );
   }

@@ -5,8 +5,19 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useLocation, useNavigate } from "react-router-dom";
+import HomeIcon from "@mui/icons-material/Home";
 
-const Header = () => {
+const Header = ({ showLogin, showHome }) => {
+  const navigate = useNavigate();
+
+  const onLogin = () => {
+    navigate("/signin");
+  };
+  const onHome = () => {
+    navigate("/");
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -14,9 +25,17 @@ const Header = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             eShop
           </Typography>
-          <IconButton size="large" color="inherit">
-            <AccountCircleIcon />
-          </IconButton>
+
+          {showLogin && (
+            <IconButton size="large" color="inherit" onClick={onLogin}>
+              <AccountCircleIcon />
+            </IconButton>
+          )}
+          {showHome && (
+            <IconButton size="large" color="inherit" onClick={onHome}>
+              <HomeIcon />
+            </IconButton>
+          )}
         </Toolbar>
       </AppBar>
     </Box>
