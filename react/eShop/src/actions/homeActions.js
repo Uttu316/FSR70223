@@ -40,18 +40,36 @@ export const getCategories = () => {
 };
 
 export const getProducts = () => {
+  const filters = new URLSearchParams(location.search);
+  const sortBy = filters.get("sortBy");
   return new Promise((resolve, reject) => {
     fakeStore
-      .get(END_POINTS.get_products)
+      .get(END_POINTS.get_products, {
+        params: {
+          sort: sortBy,
+        },
+      })
       .then(({ data }) => {
-        resolve(data);
+        resolve({ data });
       })
       .catch((err) => {
-        if(err && err.response){
-            const status = err.response.status;
-            console.log(status)
+        if (err && err.response) {
+          const status = err.response.status;
+          console.log(status);
         }
         reject(err);
       });
+  });
+};
+
+export const getFilteredProducts = () => {
+  const filters = new URLSearchParams(location.search);
+  const category = filters.get("category") || "";
+  const sortBy = filters.get("sortBy");
+  const url = END_POINTS.get_products + category;
+  return axios.get(url, {
+    params: {
+      sort: sortBy,
+    },
   });
 };

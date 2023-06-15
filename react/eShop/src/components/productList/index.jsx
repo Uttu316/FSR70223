@@ -1,27 +1,42 @@
 import { Box, Container, Stack } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import { getProducts } from "../../actions/homeActions";
+import { getFilteredProducts, getProducts } from "../../actions/homeActions";
 import ProductCardSkeleton from "../loaders/productCardSekeleton";
 import ProductCard from "../productCards";
 import NoProductImg from "../../assets/noProduct.svg";
 import ErrorImg from "../../assets/error.svg";
 import { Typography } from "@mui/material";
+import { useSearchParams } from "react-router-dom";
 
 const ProductList = () => {
   const [products, setProducts] = useState(null);
   const [apiStatus, setApiStatus] = useState("");
+  const [param] = useSearchParams();
+  const category = param.get("category");
+  const sortBy = param.get("sortBy");
 
-  useEffect(() => {
+  const fetchProducts = () => {
     setApiStatus("loading");
-    getProducts()
-      .then((data) => {
+    let productsPromise = null;
+    if (category) {
+      productsPromise = getFilteredProducts();
+    } else {
+      productsPromise = getProducts();
+    }
+
+    productsPromise
+      .then(({data}) => {
         setProducts(data);
         setApiStatus("success");
       })
       .catch((err) => {
         setApiStatus("error");
       });
-  }, []);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, [category,sortBy]);
 
   const showLoader = apiStatus === "loading";
   const isEmptyArray = Array.isArray(products) && !products.length;

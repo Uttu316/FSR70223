@@ -28,24 +28,17 @@ const Categories = () => {
 
   const showLoader = apiStatus === "loading";
 
-  // todo: improve this for replacing already selected values
   const onHandFilter = (id) => {
-   let selectedCategories =  param.getAll("category");
+    let selectedCategory = param.get("category");
 
-   if(selectedCategories.includes(id)){
-    selectedCategories = selectedCategories.filter((i)=>i!==id) 
-    if(!selectedCategories.length){
-      param.delete('category')
-    }else{
-      param.set('category',selectedCategories)
+    if (selectedCategory===(id)) {
+      param.delete("category")
+    } else {
+      param.set("category",id);
     }
-   }else{
-    param.append('category',id)
-   }
-
-    setParams(param)
+    setParams(param);
   };
-  console.log(param.getAll('category'))
+
 
   return (
     <Stack direction={"row"} spacing={2}>
@@ -56,7 +49,7 @@ const Categories = () => {
             key={id}
             size="medium"
             variant={
-              param.getAll("category").includes(id) ? "filled" : "outlined"
+              param.get("category")===(id) ? "filled" : "outlined"
             }
             onClick={() => onHandFilter(id)}
           />

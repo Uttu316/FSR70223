@@ -3,12 +3,20 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { useSearchParams } from "react-router-dom";
 
 const SortyBy = () => {
-  const [sortBy, setSortBy] = useState("");
+  const [param, setParams] = useSearchParams();
 
   const handleChange = (event) => {
-    setSortBy(event.target.value);
+    const value = event.target.value;
+    if (value) {
+      param.set("sortBy", value);
+    } else {
+      param.delete("sortBy");
+    }
+
+    setParams(param);
   };
 
   return (
@@ -17,15 +25,14 @@ const SortyBy = () => {
       <Select
         labelId="sort-by"
         id="sort-by-options"
-        value={sortBy}
         label="Sort By"
         onChange={handleChange}
       >
         <MenuItem value="">
           <em>None</em>
         </MenuItem>
-        <MenuItem value={"asec"}>Asec</MenuItem>
-        <MenuItem value={"dsec"}>Dsec</MenuItem>
+        <MenuItem value={"asc"}>Price: Low to High</MenuItem>
+        <MenuItem value={"desc"}>Price: High to Low</MenuItem>
       </Select>
     </FormControl>
   );

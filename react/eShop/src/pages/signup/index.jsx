@@ -3,27 +3,31 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { useState } from "react";
 import Header from "../../components/Header";
-import { CircularProgress } from "@mui/material";
+import { Checkbox, CircularProgress, FormControlLabel } from "@mui/material";
 import { login } from "../../actions/authActions";
 import Toast from "../../components/toast";
 import { useNavigate } from "react-router-dom";
 import { formValidation } from "../../utils/validation";
 
-const SignIn = () => {
+
+const SignUp = () => {
   const navigate = useNavigate();
   const [state, setState] = useState({
     username: "",
     password: "",
+    confirmPassword: "",
+    email: "",
+    firstName: "",
+    lastName: "",
+    phone: "",
     apiStatus: "",
     errors: null,
   });
@@ -87,17 +91,60 @@ const SignIn = () => {
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
+            <AccountCircleIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Sign Up
           </Typography>
           <Box
             component="form"
             onSubmit={handleSubmit}
             noValidate
-            sx={{ mt: 1 }}
+            sx={{ mt: 4 }}
           >
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  autoComplete="given-name"
+                  name="firstName"
+                  required
+                  fullWidth
+                  id="firstName"
+                  label="First Name"
+                  autoFocus
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  required
+                  fullWidth
+                  id="lastName"
+                  label="Last Name"
+                  name="lastName"
+                  autoComplete="family-name"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="phone"
+                  label="Phone number"
+                  name="phone"
+                  autoComplete="mobile"
+                />
+              </Grid>
+            </Grid>
             <TextField
               error={Boolean(errors && errors.usernameError)}
               margin="normal"
@@ -122,10 +169,27 @@ const SignIn = () => {
               type="password"
               id="password"
               disabled={isLoading}
-              autoComplete="current-password"
               value={state.password}
               onChange={onChangeInput}
               helperText={errors && errors.passwordError}
+            />
+            <TextField
+              error={Boolean(errors && errors.confirmPasswordError)}
+              margin="normal"
+              required
+              fullWidth
+              name="confirmPassword"
+              label="Confirm Password"
+              type="password"
+              id="confirmPassword"
+              disabled={isLoading}
+              value={state.confirmPassword}
+              onChange={onChangeInput}
+              helperText={errors && errors.confirmPasswordError}
+            />
+            <FormControlLabel
+              control={<Checkbox value="allowExtraEmails" color="primary" />}
+              label="I agree with terms & conditions."
             />
 
             <Button
@@ -135,17 +199,13 @@ const SignIn = () => {
               sx={{ mt: 3, mb: 2 }}
               disabled={isLoading}
             >
-              Sigin {isLoading && <CircularProgress sx={{ ml: 2 }} size={20} />}
+              Signup{" "}
+              {isLoading && <CircularProgress sx={{ ml: 2 }} size={20} />}
             </Button>
             <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
-                <Link href="/signup" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                <Link href="/sigin" variant="body2">
+                  {"Already have an account? Sign In"}
                 </Link>
               </Grid>
             </Grid>
@@ -164,4 +224,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
