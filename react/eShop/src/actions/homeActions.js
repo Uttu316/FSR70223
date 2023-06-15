@@ -66,7 +66,7 @@ export const getFilteredProducts = () => {
   const filters = new URLSearchParams(location.search);
   const category = filters.get("category") || "";
   const sortBy = filters.get("sortBy");
-  const url = END_POINTS.get_products + category;
+  const url = END_POINTS.get_category_products + category;
   return axios.get(url, {
     params: {
       sort: sortBy,
