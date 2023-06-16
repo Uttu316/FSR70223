@@ -11,16 +11,17 @@ const Categories = () => {
 
   const [param, setParams] = useSearchParams();
 
-  const fetchCategories = () => {
+  const fetchCategories = async () => {
     setApiStatus("loading");
-    getCategories()
-      .then((data) => {
-        setCategories(data || []);
-        setApiStatus("success");
-      })
-      .catch((err) => {
-        setApiStatus("error");
-      });
+    
+    try{
+      const data = await getCategories()
+      setCategories(data || []);
+      setApiStatus("success");
+    }catch(e){
+      console.log(e)
+      setApiStatus("error");
+    }
   };
   useEffect(() => {
     fetchCategories();
