@@ -18,9 +18,12 @@ import { login } from "../../actions/authActions";
 import Toast from "../../components/toast";
 import { useNavigate } from "react-router-dom";
 import { formValidation } from "../../utils/validation";
+import { useDispatch } from "react-redux";
+import { setLoggedinToken } from "../../redux/actions/authActions";
 
 const SignIn = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [state, setState] = useState({
     username: "",
     password: "",
@@ -43,9 +46,14 @@ const SignIn = () => {
       setState((curr) => ({ ...curr, apiStatus: "loading" }));
       login(data)
         .then(({ data }) => {
-          navigate("/", {
-            replace: true,
-          });
+          if (data && data.token) {
+            dispatch(setLoggedinToken(data.token))
+            navigate("/", {
+              replace: true,
+            });
+            return
+          }
+          throw new Error("token not available");
         })
         .catch((err) => {
           console.log(err.response.status);

@@ -7,9 +7,11 @@ import IconButton from "@mui/material/IconButton";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useLocation, useNavigate } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
+import { useSelector } from "react-redux";
 
 const Header = ({ showLogin, showHome }) => {
   const navigate = useNavigate();
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
 
   const onLogin = () => {
     navigate("/signin");
@@ -26,7 +28,7 @@ const Header = ({ showLogin, showHome }) => {
             eShop
           </Typography>
 
-          {showLogin && (
+          {showLogin && !isLoggedIn && (
             <IconButton size="large" color="inherit" onClick={onLogin}>
               <AccountCircleIcon />
             </IconButton>
