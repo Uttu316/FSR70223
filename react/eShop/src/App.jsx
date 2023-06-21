@@ -1,30 +1,26 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/home";
-import Login from "./pages/login";
-import SignIn from "./pages/login/signin";
-import Movies from "./pages/Movies";
-import NotFound from "./pages/notFound";
-import Product from "./pages/product";
-import SignUp from "./pages/signup";
+import { RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import ROUTES from "./routes";
 
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/product/:id" element={<Product />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <RouterProvider router={ROUTES} />
     </Provider>
   );
+}
+
+// before V6.13
+{
+  /* <BrowserRouter>
+<Routes>
+  {ROUTES.map((route) => (
+    <Route {...route} key={route.path} />
+  ))}
+</Routes>
+</BrowserRouter> */
 }
 
 export default App;
