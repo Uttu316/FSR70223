@@ -11,16 +11,21 @@ import {
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { getProductInfo } from "../../actions/productActions";
 import ProductCardSkeleton from "../loaders/productCardSekeleton";
 import StarIcon from "@mui/icons-material/Star";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import SendIcon from '@mui/icons-material/Send';
+import SendIcon from "@mui/icons-material/Send";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemToCart } from "../../redux/actions/cartActions";
 
 const ProductContainer = () => {
+  const navigate = useNavigate()
   const [product, setProduct] = useState(null);
   const [apiStatus, setApiStatus] = useState("");
+  const { cartItems = [] } = useSelector((state) => state.cart);
+  const dispatch = useDispatch()
   const { id: productId } = useParams();
 
   const fetchProduct = async () => {
@@ -34,14 +39,21 @@ const ProductContainer = () => {
       setApiStatus("error");
     }
   };
+  const onAddToCart = () => {
+    dispatch(addItemToCart(product));
+  };
+  const onGotoCart = ()=>{
+    navigate('/cart')
+  }
 
   useEffect(() => {
     fetchProduct();
   }, []);
   const isLoading = apiStatus === "loading";
+  const isAlreadyInCart = cartItems.find((i) => i.id === +productId);
   return (
     <Container maxWidth="lg" sx={{ mt: 8 }}>
-      {!isLoading&&product && (
+      {!isLoading && product && (
         <Stack direction={{ sm: "column", md: "row" }} gap={20}>
           <Box
             maxHeight={500}
@@ -93,22 +105,31 @@ const ProductContainer = () => {
             <Chip sx={{ mt: 2 }} label={product.category.toUpperCase()} />
             <Grid container={true} spacing={4} my={2}>
               <Grid item>
-                <Button
-                  size="large"
-                  variant="contained"
-                  endIcon={<SendIcon />}
-                >
+                <Button size="large" variant="contained" endIcon={<SendIcon />}>
                   Buy Now
                 </Button>
               </Grid>
               <Grid item>
-                <Button
-                  startIcon={<ShoppingCartIcon />}
-                  size="large"
-                  variant="outlined"
-                >
-                  Add to Cart
-                </Button>
+                {!isAlreadyInCart && (
+                  <Button
+                    startIcon={<ShoppingCartIcon />}
+                    size="large"
+                    variant="outlined"
+                    onClick={onAddToCart}
+                  >
+                    Add to Cart
+                  </Button>
+                )}
+                {isAlreadyInCart && (
+                  <Button
+                    startIcon={<ShoppingCartIcon />}
+                    size="large"
+                    variant="outlined"
+                    onClick={onGotoCart}
+                  >
+                    Go to Cart
+                  </Button>
+                )}
               </Grid>
             </Grid>
           </Box>

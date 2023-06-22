@@ -5,6 +5,8 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions, Chip } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemToCart, removeFromCart } from "../../redux/actions/cartActions";
 
 const ellipses = {
   textOverflow: "ellipsis",
@@ -12,23 +14,34 @@ const ellipses = {
   whiteSpace: "nowrap",
 };
 const ProductCard = (props) => {
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const { cartItems = [] } = useSelector((state) => state.cart);
+
+  const navigate = useNavigate();
   const { info } = props;
   const { title, price, image, description, category, id } = info || {};
 
-  const onClickProduct =()=>{
-    navigate(`/product/${id}`)
+  const onClickProduct = () => {
+    navigate(`/product/${id}`);
+  };
+  const onAddToCart = () => {
+    dispatch(addItemToCart(info));
+  };
+  const onRemoveFromCart =()=>{
+    dispatch(removeFromCart(id))
   }
+
+  const isAlreadyInCart = cartItems.find((i) => i.id === id);
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea onClick={onClickProduct}>
-          <CardMedia
-            sx={{ objectFit: "contain" }}
-            component="img"
-            height="240"
-            image={image}
-            alt={title}
-          />
+        <CardMedia
+          sx={{ objectFit: "contain" }}
+          component="img"
+          height="240"
+          image={image}
+          alt={title}
+        />
         <CardContent>
           <Typography
             sx={{ ...ellipses, textDecoration: "none" }}
@@ -59,9 +72,16 @@ const ProductCard = (props) => {
       </CardActionArea>
 
       <CardActions>
-        <Button size="small" color="primary">
-          Add to Cart
-        </Button>
+        {!isAlreadyInCart && (
+          <Button size="small" color="primary" onClick={onAddToCart}>
+            Add to Cart
+          </Button>
+        )}
+          {isAlreadyInCart && (
+          <Button size="small" color="primary" onClick={onRemoveFromCart}>
+            Remove from Cart
+          </Button>
+        )}
       </CardActions>
     </Card>
   );
