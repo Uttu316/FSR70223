@@ -20,6 +20,8 @@ import { useNavigate } from "react-router-dom";
 import { formValidation } from "../../utils/validation";
 import { useDispatch } from "react-redux";
 import { setLoggedinToken } from "../../redux/actions/authActions";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -77,6 +79,7 @@ const SignIn = () => {
   const onCloseToast = () => {
     setState((curr) => ({ ...curr, apiStatus: "" }));
   };
+
 
   const isLoading = state.apiStatus === "loading";
   const error = state.apiStatus === "error";

@@ -1,13 +1,18 @@
 import { Box, Stack, Typography } from "@mui/material";
 
 import React from "react";
+import { useMemo } from "react";
 import { useSelector } from "react-redux";
 
 const CartSummary = () => {
   const { cartItems = [] } = useSelector((state) => state.cart);
 
   const totalCount = cartItems ? cartItems.length : 0;
-  const price = cartItems ? parseInt(cartItems.reduce((acc, i) => acc + i.price, 0)) : 0;
+  const price = useMemo(() => {
+    return cartItems
+      ? parseInt(cartItems.reduce((acc, i) => acc + i.price, 0))
+      : 0;
+  }, [cartItems]);
   const discoutPrice = parseInt(price * 0.1);
   const total = parseInt(price - discoutPrice);
   return (
@@ -78,8 +83,8 @@ const CartSummary = () => {
         justifyContent={"space-between"}
         alignItems="center"
       >
-        <Typography fontWeight={'bold'} color={"green"} variant="subtitle1">
-          You saved {discoutPrice+200} Rs on this order
+        <Typography fontWeight={"bold"} color={"green"} variant="subtitle1">
+          You saved {discoutPrice + 200} Rs on this order
         </Typography>
       </Stack>
     </Box>

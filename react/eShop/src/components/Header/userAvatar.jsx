@@ -8,9 +8,10 @@ import {
   Avatar,
 } from "@mui/material";
 import avatar from "../../assets/avatar.png";
-import {connect} from "react-redux"
+import { connect } from "react-redux";
 import React, { PureComponent } from "react";
 import { logout } from "../../redux/actions/authActions";
+import { useNavigate } from "react-router-dom";
 
 class UserAvatar extends PureComponent {
   constructor() {
@@ -26,13 +27,14 @@ class UserAvatar extends PureComponent {
     this.setState({ menuOpen: null });
   };
   onLogout = () => {
-    const {dispatch} = this.props;
-  dispatch(logout())
-    this.handleCloseUserMenu()
+    const { dispatch } = this.props;
+    dispatch(logout());
+    this.handleCloseUserMenu();
   };
+
   render() {
-    const {isLoggedin} = this.props;
-    console.log(isLoggedin)
+    const { isLoggedin } = this.props;
+    console.log(isLoggedin);
     return (
       <Box sx={{ flexGrow: 0, marginLeft: 2 }}>
         <Tooltip title="Hello">
@@ -59,23 +61,35 @@ class UserAvatar extends PureComponent {
           <MenuItem onClick={this.handleCloseUserMenu}>
             <Typography textAlign="center">Profile</Typography>
           </MenuItem>
-          <MenuItem onClick={this.handleCloseUserMenu}>
-            <Typography textAlign="center">Dashboard</Typography>
-          </MenuItem>
-          <MenuItem onClick={this.onLogout}>
-            <Typography textAlign="center">Logout</Typography>
-          </MenuItem>
+          <Option label={"Dashboard"} navigateTo={"/dashboard"} />
+          <Option onClick={this.onLogout} label={"Logout"} />
         </Menu>
       </Box>
     );
   }
 }
+const Option = ({ onClick, label, navigateTo }) => {
+  const navigate = useNavigate();
 
-const mapStateToProps = (state)=>{
-    return {
-        isLoggedin:state.auth.isLoggedin
+  const onClickItem = () => {
+    if (navigateTo) {
+      navigate(navigateTo);
+    } else {
+      onClick && onClick();
     }
-}
+  };
+  return (
+    <MenuItem onClick={onClickItem}>
+      <Typography textAlign="center">{label}</Typography>
+    </MenuItem>
+  );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    isLoggedin: state.auth.isLoggedin,
+  };
+};
 
 // const mapDispatchToProps = (dispatch)=>{
 //     return {

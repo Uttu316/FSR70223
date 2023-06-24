@@ -1,5 +1,6 @@
 import { Card, Stack, Grid, Typography, Box } from "@mui/material";
 import React, { useState } from "react";
+import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import CartLayout from "../../components/cartLayout";
 import CartItem from "../../components/cartLayout/cartCard";
@@ -11,9 +12,9 @@ import Toast from "../../components/toast";
 const Cart = () => {
   const [toast, setToast] = useState(null);
   const { cartItems = [] } = useSelector((state) => state.cart);
-  const onCloseToast = () => {
+  const onCloseToast = useCallback(() => {
     setToast(null);
-  };
+  },[]);
   return (
     <div style={{ background: "#f1f3f6", minHeight: "100vh" }}>
       <Header showCart={false} showHome={true} />

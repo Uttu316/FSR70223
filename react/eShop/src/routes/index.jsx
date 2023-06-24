@@ -1,12 +1,15 @@
+
 import React from "react";
 import { createBrowserRouter, redirect } from "react-router-dom";
 import Cart from "../pages/cart";
+import Dashboard from "../pages/dahboard";
 import Home from "../pages/home";
 import SignIn from "../pages/login/signin";
 import Movies from "../pages/Movies";
 import NotFound from "../pages/notFound";
 import Product from "../pages/product";
 import SignUp from "../pages/signup";
+// const SignUp = React.lazy(() => import("../pages/signup"));
 import { getIsLoggedin } from "../redux/actions/authActions";
 
 const ROUTES = createBrowserRouter([
@@ -50,6 +53,10 @@ const ROUTES = createBrowserRouter([
       }
       return null;
     },
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
   },
   {
     path: "/product/:id",
